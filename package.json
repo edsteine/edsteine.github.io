@@ -2,7 +2,7 @@
   "name": "portfolio-site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://edsteine.github.io/portfolio",
+  "homepage": "https://edsteine.github.io",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
