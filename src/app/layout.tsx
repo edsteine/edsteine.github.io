@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import BackToTopButton from "@/components/BackToTopButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +24,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adil Ajdaa - Senior Full Stack Mobile Developer & Technical Architect",
     description: "Portfolio of Adil Ajdaa, a Senior Full Stack Mobile Developer and Technical Architect with expertise in mobile (Kotlin, Flutter), geospatial, and full-stack development. Building scalable and performant applications.",
-    url: "https://your-portfolio-url.com", // TODO: Replace with actual portfolio URL
+    url: "https://edsteine.github.io/", // Updated with actual portfolio URL
     siteName: "Adil Ajdaa's Portfolio",
     images: [
       {
-        url: "https://your-portfolio-url.com/image.png", // TODO: Replace with actual image URL
+        url: "https://via.placeholder.com/1200x630", // Updated with placeholder image URL
         width: 1200,
         height: 630,
         alt: "Adil Ajdaa's Portfolio",
@@ -40,8 +41,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Adil Ajdaa - Senior Full Stack Mobile Developer & Technical Architect",
     description: "Portfolio of Adil Ajdaa, a Senior Full Stack Mobile Developer and Technical Architect with expertise in mobile (Kotlin, Flutter), geospatial, and full-stack development. Building scalable and performant applications.",
-    images: ["https://your-portfolio-url.com/image.png"], // TODO: Replace with actual image URL
-    creator: "@yourtwitterhandle", // TODO: Replace with actual Twitter handle if available
+    images: ["https://via.placeholder.com/1200x630"], // Updated with placeholder image URL
+    
   },
 };
 
@@ -63,6 +64,7 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
+        <BackToTopButton /> {/* Render BackToTopButton */}
       </body>
     </html>
   );
