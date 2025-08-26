@@ -16,14 +16,14 @@ export default function Home() {
       title: "FPL AI Assistant",
       description: "A groundbreaking AI-powered Fantasy Premier League optimization platform that preserves historical context, learns from user patterns, and gets smarter every season. Combines current FPL data, archived seasons, external APIs, and personalized insights to create the most advanced FPL prediction system ever built.",
       link: "https://github.com/edsteine/fpl-ai-assistant-main",
-      technologies: ["React", "Next.js", "Tailwind CSS", "ML Models", "AI Integration", "TensorFlow.js"],
+      technologies: ["React", "Vite", "Tailwind CSS", "TensorFlow.js", "Brain.js", "ML Models", "AI Integration"],
       image: "/images/fpl-ai-assistant.png" // Placeholder
     },
     {
       title: "Consignment Portal",
       description: "Enterprise-grade React-based consignment management platform engineered for Shopify Plus integration, processing 1,000+ product submissions monthly and serving 100+ vendors. Features innovative 'thin database' architecture and automated commission calculation.",
       link: "https://github.com/edsteine/wlidaty-consignment-portal-main",
-      technologies: ["React", "Node.js", "Express.js", "PostgreSQL", "Shopify API", "Tailwind CSS"],
+      technologies: ["React", "Node.js", "Express.js", "PostgreSQL", "Shopify API", "Tailwind CSS", "React Context API", "React Router", "OAuth 2.0", "JWT"],
       image: "/images/consignment-portal.png" // Placeholder
     },
     {
@@ -51,7 +51,7 @@ export default function Home() {
       title: "Notification Portal",
       description: "Multilingual push notification system using Node.js and Firebase Cloud Messaging, supporting 10,000+ daily notifications across three languages. Features advanced FCM integration with topic-based targeting and RTL language support.",
       link: "https://github.com/edsteine/notification-portal",
-      technologies: ["Node.js", "Express.js", "Firebase FCM", "Tailwind CSS", "Docker"],
+      technologies: ["Node.js", "Express.js", "Firebase FCM", "Tailwind CSS", "EJS", "Passport.js", "Docker"],
       image: "/images/notification-portal.png" // Placeholder
     }
   ];
@@ -97,12 +97,37 @@ export default function Home() {
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
           <section id="about" className="container mx-auto p-8 bg-white dark:bg-gray-900">
             <h3 className="text-3xl font-bold text-center mb-8">About Me</h3>
-            <p className="text-center max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400">
-              I am a Senior Mobile Developer and Technical Architect with over 9 years of experience delivering mission-critical applications for a wide range of industries, including insurance, telecommunications, and government. My passion lies in building scalable, high-performance systems and leading technical teams to success.
-              <br/><br/>
-              I specialize in mobile development (both native Android with Kotlin and cross-platform with Flutter), geospatial technologies, and full-stack architecture. I have a proven ability to translate complex technical challenges into elegant, user-centric solutions that drive significant business value. I am committed to quality, performance, and continuous improvement, always striving to stay ahead of technology trends and empower my team to build amazing products.
-            </p>
-            {/* Fun personal touch */}
+            <div className="text-center max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+              <p className="mb-4">
+                I am an **Accomplished Senior Mobile Developer and Technical Architect with 9+ years of enterprise-level experience** delivering mission-critical applications serving 100,000+ daily users across insurance, telecommunications, construction, and government sectors. I have led technical teams of 12+ developers while architecting scalable systems that achieved 99.9% uptime and processed millions of transactions.
+              </p>
+              <p className="mb-4">
+                My specialization lies in **mobile development**, **geospatial technologies**, and **enterprise system architecture**, with proven expertise in Android, cross-platform development, and complex data management systems.
+              </p>
+              <p className="mb-4">
+                My core technical excellence includes:
+              </p>
+              <ul className="list-disc list-inside text-left mx-auto max-w-2xl mb-4">
+                <li>**Enterprise Mobile Development**: Native Android (Kotlin/Java), iOS (SwiftUI), and Flutter cross-platform solutions serving 100,000+ daily users with successful App Store launches achieving 4.0+ ratings.</li>
+                <li>**Full Stack Architecture**: Expert in Java/Spring Boot, Angular, Python/Django, with microservices handling 1M+ daily transactions and 99.9% uptime.</li>
+                <li>**Geospatial & GIS Technologies**: Advanced spatial data management, PostGIS, Google Maps SDK, and location-based services with sub-meter accuracy for 200+ field surveyors.</li>
+                <li>**Technical Leadership**: Led development teams of 12+ engineers, mentored 15+ developers, and conducted 50+ technical interviews.</li>
+                <li>**Performance Optimization**: Achieved 85-96% performance improvements across database queries, API responses, and mobile rendering.</li>
+              </ul>
+              <p className="mb-4">
+                I have made a **Quantifiable Professional Impact** by:
+              </p>
+              <ul className="list-disc list-inside text-left mx-auto max-w-2xl mb-4">
+                <li>**Large-Scale User Impact**: Applications serve 100,000+ daily users across multiple sectors.</li>
+                <li>**Mission-Critical Systems**: Led development of SmartGrid infrastructure, airport management, and financial modeling systems processing millions of transactions.</li>
+                <li>**Team Excellence**: Achieved 95% on-time delivery rates while managing cross-functional teams and reducing development cycles by 35%.</li>
+                <li>**Financial Applications**: Developed complex actuarial systems with 99.8% calculation accuracy handling retirement planning for 50+ financial advisors.</li>
+                <li>**Digital Transformation**: Led university operations serving 15,000+ students and enterprise systems reducing administrative overhead by 60%.</li>
+              </ul>
+              <p className="mb-4">
+                My **Professional Philosophy** is to combine deep engineering expertise with proven business acumen to deliver measurable results. I am committed to building scalable, high-performance systems while fostering team growth and innovation.
+              </p>
+            </div>
           </section>
         </MotionDiv>
 
@@ -139,6 +164,52 @@ export default function Home() {
           </section>
         </MotionDiv>
 
+        {/* Languages Section */}
+        <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
+          <section id="languages" className="container mx-auto p-8 bg-white dark:bg-gray-900">
+            <h3 className="text-3xl font-bold text-center mb-8">Languages</h3>
+            <div className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+              <h4 className="text-2xl font-bold mb-4">Multilingual Proficiency</h4>
+              <div className="mb-6">
+                <h5 className="text-xl font-semibold mb-2">🇸🇦 Arabic</h5>
+                <p className="mb-1"><strong>Native Speaker</strong></p>
+                <ul className="list-disc list-inside ml-4">
+                  <li>Mother tongue fluency</li>
+                  <li>Complete mastery of reading, writing, speaking, and comprehension</li>
+                  <li>Cultural and linguistic expertise</li>
+                </ul>
+              </div>
+              <div className="mb-6">
+                <h5 className="text-xl font-semibold mb-2">🇬🇧 English</h5>
+                <p className="mb-1"><strong>Fluent - Full Professional Proficiency</strong></p>
+                <ul className="list-disc list-inside ml-4">
+                  <li>Advanced business and technical communication</li>
+                  <li>Comprehensive reading and writing abilities</li>
+                  <li>Professional presentation and documentation skills</li>
+                  <li>International business communication capability</li>
+                </ul>
+              </div>
+              <div className="mb-6">
+                <h5 className="text-xl font-semibold mb-2">🇫🇷 French</h5>
+                <p className="mb-1"><strong>Advanced - Full Professional Proficiency</strong></p>
+                <ul className="list-disc list-inside ml-4">
+                  <li>Professional working proficiency</li>
+                  <li>Business communication competency</li>
+                  <li>Technical documentation and correspondence</li>
+                  <li>Academic and professional presentation abilities</li>
+                </ul>
+              </div>
+              <h4 className="text-2xl font-bold mb-4">Language Skills Summary</h4>
+              <ul className="list-disc list-inside ml-4">
+                <li><strong>Trilingual Professional</strong> with native Arabic, fluent English, and advanced French</li>
+                <li><strong>International Communication</strong> capabilities across multiple business environments</li>
+                <li><strong>Technical Documentation</strong> proficiency in all three languages</li>
+                <li><strong>Cross-Cultural Communication</strong> expertise for global business contexts</li>
+              </ul>
+            </div>
+          </section>
+        </MotionDiv>
+
         {/* Resume/CV Download Section */}
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
           <section id="resume-download" className="text-center py-10 bg-white dark:bg-gray-800">
@@ -154,7 +225,48 @@ export default function Home() {
           <section id="contact" className="text-center py-20 bg-white dark:bg-gray-800">
             <h3 className="text-3xl font-bold">Contact Me</h3>
             <p className="mt-4 text-lg">a.ajdaa@outlook.com</p>
+            <p className="mt-2 text-md">📍 Tangier, Morocco / Madrid, Spain</p>
+            <p className="mt-2 text-md">📱 +212 6 94 90 30 73</p>
             {/* Social links and contact form will go here */}
+          </section>
+        </MotionDiv>
+
+        {/* Interests Section */}
+        <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
+          <section id="interests" className="container mx-auto p-8 bg-white dark:bg-gray-900">
+            <h3 className="text-3xl font-bold text-center mb-8">Interests & Hobbies</h3>
+            <div className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400">
+              <h4 className="text-2xl font-bold mb-4">🏃 Sports & Recreation</h4>
+              <ul className="list-disc list-inside ml-4 mb-6">
+                <li><strong>Football (Soccer)</strong> - Regular player and enthusiast</li>
+                <li><strong>Basketball</strong> - Active participant and fan</li>
+                <li><strong>Taekwondo</strong> - Martial arts practice and discipline</li>
+                <li><strong>Swimming</strong> - Fitness and recreational activity</li>
+                <li><strong>Fishing</strong> - Outdoor recreation and relaxation</li>
+              </ul>
+
+              <h4 className="text-2xl font-bold mb-4">💻 Technology & Professional Development</h4>
+              <ul className="list-disc list-inside ml-4 mb-6">
+                <li><strong>Technology Conferences</strong> - Attending industry events and staying current with trends</li>
+                <li><strong>New Frameworks Exploration</strong> - Continuously learning and experimenting with emerging technologies</li>
+                <li><strong>Open-Source Contributions</strong> - Contributing to community projects and collaborative development</li>
+              </ul>
+
+              <h4 className="text-2xl font-bold mb-4">🎯 Personal Interests</h4>
+              <ul className="list-disc list-inside ml-4 mb-6">
+                <li><strong>Gaming</strong> - Video games and strategic entertainment</li>
+                <li><strong>Music</strong> - Listening to various genres and musical appreciation</li>
+                <li><strong>Travel</strong> - Exploring new places and cultural experiences</li>
+                <li><strong>Reading</strong> - Books and continuous learning through literature</li>
+              </ul>
+
+              <h4 className="text-2xl font-bold mb-4">📚 Continuous Learning</h4>
+              <ul className="list-disc list-inside ml-4">
+                <li><strong>Professional Development</strong> - Staying updated with industry best practices</li>
+                <li><strong>Cultural Exploration</strong> - Through travel and diverse experiences</li>
+                <li><strong>Physical Wellness</strong> - Through various sports and outdoor activities</li>
+              </ul>
+            </div>
           </section>
         </MotionDiv>
       </main>
