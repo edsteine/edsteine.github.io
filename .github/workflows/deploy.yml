@@ -27,7 +27,7 @@ jobs:
         run: npm ci
 
       - name: Build Next.js project
-                  run: npm run build && npm run export
+        run: npm run build && npm run export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
