@@ -7,4 +7,4 @@ deploy:
 commit:
 	git add .                   
 	git commit -m "first commit"
-	git push -u origin main     
+	git push --force -u origin main     
