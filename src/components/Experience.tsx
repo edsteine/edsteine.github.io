@@ -61,17 +61,17 @@ const experienceData = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="container mx-auto p-8">
+    <section id="experience" className="container mx-auto p-8 bg-white dark:bg-gray-800">
       <h3 className="text-3xl font-bold text-center mb-12">Work Experience</h3>
-      <div className="relative border-l-2 border-gray-700">
+      <div className="relative border-l-2 border-gray-700 dark:border-gray-300">
         {experienceData.map((job, index) => (
-          <div key={index} className="mb-8 flex items-center w-full">
-            <div className="absolute -left-4 bg-gray-500 rounded-full h-8 w-8"></div>
+          <div key={index} className="mb-8 flex items-center w-full p-6 rounded-lg shadow-md bg-white dark:bg-gray-800">
+            <div className="absolute -left-4 bg-gray-500 dark:bg-gray-400 rounded-full h-8 w-8"></div>
             <div className="ml-12 w-full">
               <h4 className="text-xl font-bold">{job.role}</h4>
               <p className="text-lg font-semibold">{job.company}</p>
-              <p className="text-sm text-gray-400 mb-2">{job.period}</p>
-              <p className="text-gray-300">{job.description}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">{job.period}</p>
+              <p className="text-gray-700 dark:text-gray-300">{job.description}</p>
             </div>
           </div>
         ))}

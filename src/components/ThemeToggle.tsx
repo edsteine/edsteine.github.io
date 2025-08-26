@@ -4,11 +4,19 @@ import * as React from "react";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
+  const [mounted, setMounted] = React.useState(false);
   const { setTheme, theme } = useTheme();
+
+  // useEffect only runs on the client, so now we can safely show the UI
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   return (
     <button
-      className="p-2 rounded-md hover:bg-gray-700"
+      className="p-2 rounded-md hover:bg-gray-700 text-gray-800 dark:hover:bg-gray-600 dark:text-white"
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       aria-label="Toggle theme"
     >

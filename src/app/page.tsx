@@ -62,21 +62,21 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+    <div className="">
       <Header />
 
       <main>
         {/* Hero/Landing Section */}
         <MotionDiv initial="hidden" animate="visible" variants={sectionVariants}>
-          <section id="hero" className="text-center py-20">
+          <section id="hero" className="text-center py-20 bg-white dark:bg-gray-900">
             <h2 className="text-4xl font-bold">Adil Ajdaa</h2>
             <p className="mt-4 text-lg">Senior Full Stack Mobile Developer & Technical Architect</p>
             <p className="mt-2 text-md">Building scalable and performant mobile and web applications.</p>
             <div className="mt-8 flex justify-center space-x-4">
-              <a href="#contact" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+              <a href="#contact" className="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                 Contact Me
               </a>
-              <a href="#projects" className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+              <a href="#projects" className="bg-white border border-gray-700 text-gray-700 hover:bg-gray-50 dark:bg-gray-600 dark:hover:bg-gray-500 dark:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                 View My Work
               </a>
             </div>
@@ -95,7 +95,7 @@ export default function Home() {
 
         {/* About Me Section */}
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-          <section id="about" className="container mx-auto p-8">
+          <section id="about" className="container mx-auto p-8 bg-white dark:bg-gray-900">
             <h3 className="text-3xl font-bold text-center mb-8">About Me</h3>
             <p className="text-center max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400">
               I am a Senior Mobile Developer and Technical Architect with over 9 years of experience delivering mission-critical applications for a wide range of industries, including insurance, telecommunications, and government. My passion lies in building scalable, high-performance systems and leading technical teams to success.
@@ -108,7 +108,7 @@ export default function Home() {
 
         {/* Skills/Technologies Section */}
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-          <section id="skills" className="container mx-auto p-8">
+          <section id="skills" className="container mx-auto p-8 bg-white dark:bg-gray-900">
             <h3 className="text-3xl font-bold text-center mb-8">Skills & Technologies</h3>
             <Skills />
           </section>
@@ -121,7 +121,7 @@ export default function Home() {
 
         {/* Featured Projects Section */}
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-          <section id="projects" className="container mx-auto p-8">
+          <section id="projects" className="container mx-auto p-8 bg-white dark:bg-gray-900">
             <h3 className="text-3xl font-bold text-center mb-8">Featured Projects</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
@@ -133,7 +133,7 @@ export default function Home() {
 
         {/* Education & Certifications Section */}
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-          <section id="education" className="container mx-auto p-8">
+          <section id="education" className="container mx-auto p-8 bg-white dark:bg-gray-900">
             <h3 className="text-3xl font-bold text-center mb-8">Education & Certifications</h3>
             <Education />
           </section>
@@ -141,9 +141,9 @@ export default function Home() {
 
         {/* Resume/CV Download Section */}
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-          <section id="resume-download" className="text-center py-10 bg-gray-100 dark:bg-gray-800">
+          <section id="resume-download" className="text-center py-10 bg-white dark:bg-gray-800">
             <h3 className="text-2xl font-bold mb-4">Download My Resume</h3>
-            <a href="/ADIL_AJDAA_Resume_Improved.pdf" download className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg">
+            <a href="/ADIL_AJDAA_Resume_Improved.pdf" download className="bg-white border border-blue-600 text-blue-600 hover:bg-blue-50 dark:bg-blue-700 dark:hover:bg-blue-800 dark:text-white font-bold py-3 px-6 rounded-lg">
               Download PDF
             </a>
           </section>
@@ -151,7 +151,7 @@ export default function Home() {
 
         {/* Contact Information Section */}
         <MotionDiv initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
-          <section id="contact" className="text-center py-20 bg-gray-100 dark:bg-gray-800">
+          <section id="contact" className="text-center py-20 bg-white dark:bg-gray-800">
             <h3 className="text-3xl font-bold">Contact Me</h3>
             <p className="mt-4 text-lg">a.ajdaa@outlook.com</p>
             {/* Social links and contact form will go here */}

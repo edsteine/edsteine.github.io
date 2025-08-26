@@ -33,7 +33,7 @@ const Education = () => {
     <div className="container mx-auto p-8">
       <div className="mb-12">
         {educationData.map((edu, index) => (
-          <div key={index} className="mb-8 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md">
+          <div key={index} className="mb-8 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
             <h4 className="text-xl font-bold">{edu.degree}</h4>
             <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">{edu.institution}</p>
             <p className="text-md text-gray-600 dark:text-gray-400">{edu.location} | {edu.period}</p>

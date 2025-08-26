@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import { useTheme } from 'next-themes';
 
 const technicalSkills = {
   "Proficient in": [
@@ -32,6 +35,17 @@ const softSkills = [
 ];
 
 const Skills = () => {
+  const [mounted, setMounted] = React.useState(false);
+  const { theme } = useTheme();
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null; // Or a loading spinner, or a skeleton
+  }
+
   return (
     <div className="container mx-auto p-8">
       <div className="mb-12">
@@ -41,7 +55,7 @@ const Skills = () => {
             <h5 className="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-300">{category}</h5>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, skillIndex) => (
-                <span key={skillIndex} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">
+                <span key={skillIndex} className={` ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} px-3 py-1 rounded-full text-sm border border-gray-300 dark:border-gray-700`}>
                   {skill}
                 </span>
               ))}
@@ -54,7 +68,7 @@ const Skills = () => {
         <h4 className="text-2xl font-bold mb-4">Soft Skills</h4>
         <div className="flex flex-wrap gap-2">
           {softSkills.map((skill, index) => (
-            <span key={index} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">
+            <span key={index} className={` ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} px-3 py-1 rounded-full text-sm border border-gray-300 dark:border-gray-700`}>
               {skill}
             </span>
           ))}

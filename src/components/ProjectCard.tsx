@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image'; // Import Image component
+import { useTheme } from 'next-themes';
 
 interface ProjectCardProps {
   title: string;
@@ -10,8 +13,9 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, technologies, image }) => {
+  const { theme } = useTheme();
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col h-full">
+    <div className="p-6 rounded-lg shadow-lg flex flex-col h-full bg-white dark:bg-gray-800">
       {image && (
         <div className="mb-4">
           <Image
@@ -28,7 +32,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, tec
       <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow">{description}</p>
       <div className="flex flex-wrap gap-2 mb-4">
         {technologies.map((tech, index) => (
-          <span key={index} className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3 py-1 rounded-full text-sm">
+          <span key={index} className={` ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} px-3 py-1 rounded-full text-sm border border-gray-300 dark:border-gray-700`}>
             {tech}
           </span>
         ))}
