@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, tec
             width={400} // Placeholder width
             height={200} // Placeholder height
             className="w-full h-48 object-cover rounded-md"
-            unoptimized={true} // Disable optimization for static export
+            
           />
         </div>
       )}
