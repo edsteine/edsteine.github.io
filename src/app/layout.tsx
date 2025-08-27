@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     images: ["https://via.placeholder.com/1200x630"], // Updated with placeholder image URL
     
   },
+  alternates: {
+    canonical: "https://edsteine.github.io/",
+  },
 };
 
 export default function RootLayout({
@@ -51,17 +54,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Adil Ajdaa",
+    "url": "https://edsteine.github.io/",
+    "sameAs": [
+      "https://github.com/edsteine",
+      "https://linkedin.com/in/edsteine"
+    ],
+    "jobTitle": "Senior Full Stack Mobile Developer & Technical Architect",
+    "description": "Portfolio of Adil Ajdaa, a Senior Full Stack Mobile Developer and Technical Architect with expertise in mobile (Kotlin, Flutter), geospatial, and full-stack development. Building scalable and performant applications."
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <ThemeProvider attribute="class">
           {children}
         </ThemeProvider>
         <BackToTopButton /> {/* Render BackToTopButton */}

@@ -136,7 +136,8 @@ const Skills = () => {
             <h5 className="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-300">{category}</h5>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill, skillIndex) => (
-                <span key={skillIndex} className={` ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} px-3 py-1 rounded-full text-sm border border-gray-300 dark:border-gray-700`}>
+                <span key={skillIndex} className={` ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} px-3 py-1 rounded-full text-sm border border-gray-300 dark:border-gray-700 flex items-center`}>
+                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M11.49 3.17c-.325-1.119-1.353-1.9-2.51-1.9-1.157 0-2.185.781-2.51 1.9l-.217.76c-.194.676-.608 1.23-1.15 1.588l-.72.47a2.5 2.5 0 00-1.18 2.634l.38.95a2.5 2.5 0 00-.167 2.104l-.609 1.446c-.325.768.098 1.636.866 1.96l.72.308c.542.232.956.786 1.15 1.462l.217.76c.325 1.119 1.353 1.9 2.51 1.9 1.157 0 2.185-.781 2.51-1.9l.217-.76c.194-.676.608-1.23 1.15-1.588l.72-.47a2.5 2.5 0 001.18-2.634l-.38-.95a2.5 2.5 0 00.167-2.104l.609-1.446c.325-.768-.098-1.636-.866-1.96l-.72-.308c-.542-.232-.956-.786-1.15-1.462l-.217-.76zM10 12.75a2.75 2.75 0 100-5.5 2.75 2.75 0 000 5.5z" clipRule="evenodd"></path></svg>
                   {skill}
                 </span>
               ))}

@@ -12,11 +12,11 @@ const Header = () => {
 
   const navLinks = (
     <>
-      <a href="#about" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white" onClick={() => setIsMenuOpen(false)}>About</a>
-      <a href="#experience" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white" onClick={() => setIsMenuOpen(false)}>Experience</a>
-      <a href="#projects" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white" onClick={() => setIsMenuOpen(false)}>Projects</a>
-      <a href="#skills" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white" onClick={() => setIsMenuOpen(false)}>Skills</a>
-      <a href="#contact" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white" onClick={() => setIsMenuOpen(false)}>Contact</a>
+      <a href="#about" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>About</a>
+      <a href="#experience" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Experience</a>
+      <a href="#projects" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Projects</a>
+      <a href="#skills" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Skills</a>
+      <a href="#contact" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Contact</a>
     </>
   );
 
@@ -36,7 +36,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
-          <button onClick={toggleMenu} className="p-2 rounded-md hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 dark:focus:ring-gray-400" aria-label="Toggle mobile menu">
+          <button onClick={toggleMenu} className="p-2 rounded-md hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:focus:ring-blue-400" aria-label="Toggle mobile menu">
             {isMenuOpen ? (
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
