@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ThemeToggle } from './ThemeToggle';
+import { ThemeToggle } from '../ui/ThemeToggle';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
+import { useLanguage } from '@/hooks/useLanguage';
 import { siteConfig } from '@/data/siteConfig';
 
 const Header = () => {
+  const { t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -20,7 +23,7 @@ const Header = () => {
           className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           onClick={() => setIsMenuOpen(false)}
         >
-          {link.name}
+          {t(`navigation.${link.name.toLowerCase()}`)}
         </a>
       ))}
     </>
@@ -36,11 +39,13 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4 text-sm">
           {navLinks}
+          <LanguageSwitcher />
           <ThemeToggle />
         </nav>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button onClick={toggleMenu} className="p-2 rounded-md hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 dark:focus:ring-blue-400" aria-label="Toggle mobile menu">
             {isMenuOpen ? (

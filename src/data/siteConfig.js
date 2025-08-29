@@ -4,8 +4,8 @@ const siteConfig = {
   navLinks: [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
-    { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ],
 };
