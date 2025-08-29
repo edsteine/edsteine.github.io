@@ -1,123 +1,34 @@
 "use client";
 
 import React from 'react';
-import { useTheme } from 'next-themes';
+import { motion, cubicBezier } from 'framer-motion';
 
-const technicalSkills = {
-  "Proficient in": [
-    "Kotlin", "Java 17+", "JavaScript ES6+/TypeScript", "Flutter/Dart", "Android SDK",
-    "Spring Boot", "Angular 15+", "React 18", "Python 3.x", "PHP 8+",
-    "PostgreSQL/MySQL", "RESTful APIs", "Git/GitHub", "Mobile Development (Native & Cross-platform)",
-    "Jetpack Compose", "Clean Architecture", "MVVM Pattern", "Material Design",
-    "Firebase/Cloud Services", "HTML5/CSS3", "Gradle/Maven"
-  ],
-  "Experienced in": [
-    "Node.js/Express.js", "Vue.js/Vuex", "Django/Django REST Framework", "Spring MVC/Spring Batch",
-    "GraphQL", "Docker/Kubernetes", "AWS/Cloud Platforms", "Microservices Architecture",
-    "Redis/ElasticSearch", "MongoDB/Room Database", "WebSocket/Real-time Communication",
-    "OAuth 2.0/JWT Authentication", "CI/CD Pipelines (Jenkins, GitLab CI)", "Performance Optimization",
-    "Testing Frameworks (JUnit, Espresso, Jest, Cypress)", "Apache Kafka", "Agile/Scrum Methodologies",
-    "Google Maps API/OpenStreetMap", "Bluetooth Integration", "PWA Development"
-  ],
-  "Familiar with": [
-    "SwiftUI/iOS Development", "Machine Learning/Scikit-learn", "Blockchain/Web3 Technologies",
-    "IoT Development", "DevOps/Infrastructure as Code", "Big Data Analytics", "UI/UX Design (Figma)",
-    "Security/Encryption (AES, RSA)", "Cloud-Native Development", "Serverless Architecture",
-    "Terraform", "Prometheus/Grafana", "SOAP Web Services", "Apache HTTP Server",
-    "Linux Administration", "TCP/IP Networking"
-  ]
+interface Skill {
+  name: string;
+  level: number; // Proficiency level from 0 to 100
+}
+
+interface SkillCategory {
+  category: string;
+  skills: Skill[];
+}
+
+import { technicalSkillsMap, technicalSkillsCategories, softSkills } from '@/data/skillsData';
+
+const getTechnicalSkillsData = (): SkillCategory[] => {
+  const skillsData: SkillCategory[] = Object.entries(technicalSkillsCategories).map(([category, skillNames]) => ({
+    category: category,
+    skills: skillNames.map(name => ({
+      name: name,
+      level: technicalSkillsMap[category as keyof typeof technicalSkillsMap] || 0, // Assign level based on category
+    })),
+  }));
+
+  return skillsData;
 };
 
-const softSkills = [
-  {
-    category: "Problem-Solving & Analytical Skills",
-    details: [
-      "Finding Practical Solutions: Finding practical solutions to mobile development challenges and complex technical problems",
-      "Strong Analytical Abilities: Identifying bottlenecks, root cause analysis, and developing innovative solutions",
-      "Technical Problem Resolution: Proposing effective solutions to complex technical challenges",
-      "Critical Thinking: Analyzing problems systematically and resolving challenges quickly and efficiently",
-      "Performance Optimization: Identifying and optimizing app performance issues and system bottlenecks"
-    ]
-  },
-  {
-    category: "Communication & Collaboration",
-    details: [
-      "Strong Communication Skills: Ability to communicate complex technical concepts clearly to diverse audiences",
-      "Technical Communication: Explaining technical concepts in clear, simple terms to clients and stakeholders",
-      "Cross-Functional Collaboration: Effective teamwork with diverse teams across different departments and expertise areas",
-      "Client-Focused Consulting: Understanding client needs and delivering tailored solutions that enhance business outcomes",
-      "Team Collaboration: Ensuring alignment on project goals and objectives through effective communication"
-    ]
-  },
-  {
-    category: "Time Management & Organization",
-    details: [
-      "Project Management: Delivering projects on time while managing multiple priorities and competing deadlines",
-      "Time Management Excellence: Consistently meeting deadlines while managing multiple complex projects simultaneously",
-      "Strong Organizational Skills: Managing multiple tasks simultaneously, prioritizing effectively without compromising quality",
-      "Efficient Prioritization: Strategic task management and resource allocation for optimal productivity"
-    ]
-  },
-  {
-    category: "Leadership & Mentoring",
-    details: [
-      "Technical Leadership: Mentoring junior developers and guiding technical decisions with expertise and best practices",
-      "Team Guidance: Leading technical discussions, architecture decisions, and development methodology implementation",
-      "Code Quality Leadership: Setting and maintaining high standards for code quality, testing, and documentation",
-      "Knowledge Sharing: Training team members and facilitating knowledge transfer across projects",
-      "Junior Developer Mentoring: Providing comprehensive guidance and support to junior developers in their professional growth"
-    ]
-  },
-  {
-    category: "Adaptability & Continuous Learning",
-    details: [
-      "Technological Adaptability: Quickly adopting new tools, technologies, and development frameworks",
-      "Quick Learning: Rapidly adapting to new technologies, frameworks, and work environments",
-      "Industry Awareness: Staying updated with industry trends, emerging technologies, and best practices",
-      "Flexibility: Adapting to changing project requirements, client needs, and business objectives"
-    ]
-  },
-  {
-    category: "Goal-Oriented & Proactive Approach",
-    details: [
-      "Results-Focused: Self-driven with a strong focus on achieving measurable results and business objectives",
-      "Proactive Problem-Solving: Anticipating challenges and implementing preventive solutions before issues arise",
-      "Initiative-Taking: Identifying improvement opportunities and driving implementation of enhanced processes",
-      "Continuous Improvement: Constantly seeking ways to optimize processes, systems, and team productivity"
-    ]
-  },
-  {
-    category: "Quality Assurance & Attention to Detail",
-    details: [
-      "Meticulous Attention to Detail: Ensuring high standards in coding, testing, and comprehensive documentation",
-      "Code Quality Excellence: Creating clean, efficient, and reliable code for scalable applications",
-      "Testing Excellence: Implementing thorough testing strategies to ensure application stability and coverage",
-      "Documentation Standards: Maintaining detailed technical documentation and development process records"
-    ]
-  },
-  {
-    category: "Client Relations & Business Acumen",
-    details: [
-      "Excellent Client Interaction: Building strong relationships with clients and understanding their business requirements",
-      "Business Solution Translation: Translating technical needs into actionable business solutions and outcomes",
-      "Stakeholder Management: Managing expectations and maintaining clear communication with all project stakeholders",
-      "Customer Satisfaction Focus: Ensuring delivered solutions meet client expectations and enhance user satisfaction"
-    ]
-  },
-  {
-    category: "Creative & Innovative Thinking",
-    details: [
-      "Development Quality Innovation: Creating innovative approaches to code architecture and application design",
-      "User Experience Focus: Designing solutions that prioritize exceptional user experiences and interface design",
-      "Creative Problem-Solving: Developing unique approaches to overcome technical limitations and constraints",
-      "Innovation Implementation: Incorporating cutting-edge technologies and methodologies into practical solutions"
-    ]
-  }
-];
-
-const Skills = () => {
+const Skills: React.FC = () => {
   const [mounted, setMounted] = React.useState(false);
-  const { theme } = useTheme();
 
   React.useEffect(() => {
     setMounted(true);
@@ -127,19 +38,42 @@ const Skills = () => {
     return null; // Or a loading spinner, or a skeleton
   }
 
+  const technicalSkillsData = getTechnicalSkillsData(); // Get the data with levels
+
+  const skillVariants = {
+    hidden: { width: 0, opacity: 0 },
+    visible: (level: number) => ({
+      width: `${level}%`,
+      opacity: 1,
+      transition: { duration: 1.5, ease: cubicBezier(0.42, 0, 1, 1) },
+    }),
+  };
+
   return (
     <div className="container mx-auto p-8">
       <div className="mb-12">
         <h4 className="text-2xl font-bold mb-4">Technical Skills</h4>
-        {Object.entries(technicalSkills).map(([category, skills], index) => (
+        {technicalSkillsData.map((categoryData, index) => (
           <div key={index} className="mb-6">
-            <h5 className="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-300">{category}</h5>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill, skillIndex) => (
-                <span key={skillIndex} className={` ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} px-3 py-1 rounded-full text-sm border border-gray-300 dark:border-gray-700 flex items-center`}>
-                  <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M11.49 3.17c-.325-1.119-1.353-1.9-2.51-1.9-1.157 0-2.185.781-2.51 1.9l-.217.76c-.194.676-.608 1.23-1.15 1.588l-.72.47a2.5 2.5 0 00-1.18 2.634l.38.95a2.5 2.5 0 00-.167 2.104l-.609 1.446c-.325.768.098 1.636.866 1.96l.72.308c.542.232.956.786 1.15 1.462l.217.76c.325 1.119 1.353 1.9 2.51 1.9 1.157 0 2.185-.781 2.51-1.9l.217-.76c.194-.676.608-1.23 1.15-1.588l.72-.47a2.5 2.5 0 001.18-2.634l-.38-.95a2.5 2.5 0 00.167-2.104l.609-1.446c.325-.768-.098-1.636-.866-1.96l-.72-.308c-.542-.232-.956-.786-1.15-1.462l-.217-.76zM10 12.75a2.75 2.75 0 100-5.5 2.75 2.75 0 000 5.5z" clipRule="evenodd"></path></svg>
-                  {skill}
-                </span>
+            <h5 className="text-xl font-semibold mb-3 text-gray-700 dark:text-gray-300">{categoryData.category}</h5>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {categoryData.skills.map((skill, skillIndex) => (
+                <div key={skillIndex}>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-gray-700 dark:text-gray-300">{skill.name}</span>
+                    <span className="text-sm font-medium text-gray-600 dark:text-gray-400">{skill.level}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+                    <motion.div
+                      className="bg-blue-600 h-2.5 rounded-full"
+                      variants={skillVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true, amount: 0.5 }}
+                      custom={skill.level}
+                    ></motion.div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>

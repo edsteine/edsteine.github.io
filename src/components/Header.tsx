@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
+import { siteConfig } from '@/data/siteConfig';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,19 +13,24 @@ const Header = () => {
 
   const navLinks = (
     <>
-      <a href="#about" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>About</a>
-      <a href="#experience" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Experience</a>
-      <a href="#projects" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Projects</a>
-      <a href="#skills" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Skills</a>
-      <a href="#contact" className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50" onClick={() => setIsMenuOpen(false)}>Contact</a>
+      {siteConfig.navLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.href}
+          className="transition-colors hover:text-gray-900 dark:hover:text-gray-100 text-gray-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          {link.name}
+        </a>
+      ))}
     </>
   );
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-4">
         <a href="#" className="text-xl font-bold text-gray-800 dark:text-white">
-          Adil Ajdaa
+          {siteConfig.author}
         </a>
 
         {/* Desktop Navigation */}

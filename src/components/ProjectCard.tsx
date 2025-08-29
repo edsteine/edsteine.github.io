@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes';
 import { useState, useEffect } from 'react'; // Import useState and useEffect
 import { motion } from 'framer-motion'; // Import motion
 
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -15,8 +16,10 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, technologies, image }) => {
+  
   const { resolvedTheme } = useTheme(); // Use resolvedTheme
   const [mounted, setMounted] = useState(false); // Add mounted state
+  
 
   useEffect(() => {
     setMounted(true); // Set mounted to true after component mounts
@@ -51,6 +54,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, tec
     );
   }
 
+  const imageSrc = image ? image : undefined;
+
   return (
     <motion.div
       className="p-6 rounded-lg shadow-lg flex flex-col h-full bg-white dark:bg-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
@@ -62,10 +67,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, link, tec
       onClick={() => window.open(link, "_blank")}
       tabIndex={0} // Make the div focusable
     >
-      {image && (
+      {imageSrc && (
         <div className="mb-4">
           <Image
-            src={image}
+            src={imageSrc}
             alt={title}
             width={400} // Placeholder width
             height={200} // Placeholder height

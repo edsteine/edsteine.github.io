@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://your-portfolio-url.com/sitemap.xml # TODO: Replace with actual portfolio URL
+Sitemap: https://edsteine.github.io/sitemap.xml
