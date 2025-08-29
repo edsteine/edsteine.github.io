@@ -46,7 +46,7 @@ portfolio-site/
 ```bash
 # Clone it
 git clone https://github.com/edsteine/edsteine.github.io.git
-cd edsteine.github.io
+cd edsteine.github.io 
 
 # Install stuff
 npm install
