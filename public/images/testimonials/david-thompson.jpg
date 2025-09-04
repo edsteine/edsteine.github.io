@@ -1,0 +1,6 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#f59e0b"/>
+  <circle cx="50" cy="40" r="15" fill="white"/>
+  <rect x="30" y="60" width="40" height="30" rx="15" fill="white"/>
+  <text x="50" y="85" fill="#f59e0b" font-size="8" text-anchor="middle" font-family="Arial">DT</text>
+</svg>
