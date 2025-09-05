@@ -60,14 +60,14 @@ const TYPE_STYLES: TypeStyleConfig = {
 
 const TIMELINE_CLASSES = {
   container: 'relative max-w-6xl mx-auto',
-  line: 'absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-px bg-gradient-to-b from-blue-500 via-purple-500 to-green-500',
-  eventsContainer: 'space-y-8',
-  eventContainer: 'relative flex items-center',
-  node: 'absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-4 h-4 rounded-full border-4 border-white dark:border-gray-900 z-10',
-  cardContainer: 'ml-16 md:ml-0 md:w-5/12 md:mx-8 cursor-pointer w-full max-w-lg',
-  card: 'bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border-2 transition-colors duration-300',
-  cardSelected: 'border-blue-500',
-  cardHover: 'border-transparent hover:border-blue-300 dark:hover:border-blue-600',
+  line: 'absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 via-indigo-500 to-green-500 shadow-lg',
+  eventsContainer: 'space-y-12 md:space-y-16',
+  eventContainer: 'relative flex items-center group',
+  node: 'absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 z-10 shadow-xl transition-all duration-300 group-hover:scale-125 group-hover:shadow-2xl',
+  cardContainer: 'ml-20 md:ml-0 md:w-5/12 md:mx-12 cursor-pointer w-full max-w-lg transition-all duration-500 group-hover:scale-105',
+  card: 'bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border-2 transition-all duration-500 backdrop-blur-sm bg-white/90 dark:bg-gray-800/90 hover:shadow-2xl hover:bg-white dark:hover:bg-gray-800',
+  cardSelected: 'border-blue-500 shadow-2xl ring-4 ring-blue-200 dark:ring-blue-800 scale-105',
+  cardHover: 'border-transparent hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-2xl',
   header: 'flex items-center space-x-3 mb-3',
   iconContainer: 'text-blue-600 dark:text-blue-400',
   titleContainer: 'flex-1 min-w-0',
@@ -150,10 +150,31 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
 
   return (
     <div className={TIMELINE_CLASSES.container} role="region" aria-label="Interactive timeline">
-      {}
-      <div className={TIMELINE_CLASSES.line} aria-hidden="true" />
+      {/* Animated Timeline Line with Gradient Pulse */}
+      <div className={TIMELINE_CLASSES.line} aria-hidden="true">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-400/30 via-purple-400/30 via-indigo-400/30 to-green-400/30 animate-pulse" />
+      </div>
 
-      {}
+      {/* Floating Year Markers */}
+      <div className="absolute left-2 md:left-1/2 md:transform md:-translate-x-1/2 -top-6 text-xs text-gray-500 dark:text-gray-400 font-mono md:-ml-8">
+        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full shadow-lg text-center min-w-16">
+          2025
+        </div>
+      </div>
+      <div className="absolute left-2 md:left-1/2 md:transform md:-translate-x-1/2 -bottom-6 text-xs text-gray-500 dark:text-gray-400 font-mono md:-ml-8">
+        <div className="bg-gradient-to-r from-green-500 to-teal-500 text-white px-3 py-1 rounded-full shadow-lg text-center min-w-16">
+          2016
+        </div>
+      </div>
+
+      {/* Progress Indicator */}
+      <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-0 bottom-0 w-2 md:w-1">
+        <div className="h-full bg-gradient-to-b from-blue-500/20 via-purple-500/20 to-green-500/20 animate-pulse" style={{
+          animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+        }} />
+      </div>
+
+      {/* Experience Events */}
       <div className={TIMELINE_CLASSES.eventsContainer}>
         {events.map((event) => {
           const isSelected = selectedEvent === event.id;

@@ -3,10 +3,10 @@ import { Experience } from '@/lib/types/content';
 export const experienceData: Experience[] = [
   {
     company: "Wlidaty",
-    role: "Senior Flutter Developer",
-    period: "Feb 2025 - Present",
+    role: "Développeur Flutter Senior",
+    period: "Fév 2025 - Présent",
     description: [
-      "Led full-stack development of a specialized consignment management platform designed to streamline inventory submission, approval workflows, and commission processing for businesses operating on Shopify Plus, serving 100+ vendors and processing 1,000+ product submissions monthly",
+      "Dirigé le développement full-stack d'une plateforme de gestion de consignation spécialisée pour rationaliser la soumission d'inventaire, les workflows d'approbation et le traitement des commissions pour les entreprises opérant sur Shopify Plus, servant 100+ vendeurs et traitant 1,000+ soumissions de produits mensuellement",
       "Architected and implemented innovative \"thin database\" approach to minimize Shopify data duplication, substantially reducing API calls and significantly improving system performance through intelligent caching and smart invalidation rules",
       "Developed comprehensive React frontend with Tailwind CSS featuring intuitive vendor dashboard, real-time sales metrics, and advanced product management tools, achieving excellent user satisfaction based on vendor feedback",
       "Built robust Node.js/Express.js backend with PostgreSQL database, implementing RESTful API design supporting complex commission structures including tiered rates, category-specific rates, and time-sensitive rules",
@@ -31,7 +31,7 @@ export const experienceData: Experience[] = [
   },
   {
     company: "GeoTech Solutions",
-    role: "Senior Mobile Developer & Technical Lead",
+    role: "Développeur Mobile Senior & Lead Technique",
     period: "Jan 2020 - Jan 2025",
     description: [
       "Led a team of 12+ developers in building scalable geospatial applications serving 100,000+ daily users with 99.9% uptime",
@@ -49,8 +49,8 @@ export const experienceData: Experience[] = [
   },
   {
     company: "MobileTech Innovation",
-    role: "Flutter Developer",
-    period: "Jun 2018 - Dec 2019",
+    role: "Développeur Flutter",
+    period: "Juin 2018 - Déc 2019",
     description: [
       "Developed cross-platform mobile applications using Flutter, serving diverse client requirements across multiple industries",
       "Collaborated with design teams to implement pixel-perfect UI/UX designs with smooth animations and responsive layouts",
@@ -67,8 +67,8 @@ export const experienceData: Experience[] = [
   },
   {
     company: "StartupHub",
-    role: "Full Stack Developer",
-    period: "Mar 2016 - May 2018",
+    role: "Développeur Full Stack",
+    period: "Mars 2016 - Mai 2018",
     description: [
       "Built end-to-end web applications using React and Node.js for various startup clients",
       "Developed RESTful APIs and integrated with third-party services for payment processing and analytics",

@@ -80,7 +80,24 @@ const ExperienceSection: React.FC = () => {
           transition={EXPERIENCE_CONFIG.animation.transition}
         >
           <h2 className={SECTION_CLASSES.title}>
-            Professional Journey
+            <span className="text-blue-400 font-mono text-lg">const</span>{' '}
+            <span className="text-yellow-500">myJourney</span> 
+            <span className="text-gray-400">{' = '}</span>
+            <span className="text-green-500">async</span> 
+            <span className="text-gray-400">{'() =>'}</span> 
+            <span className="text-gray-400">{' {'}</span>
+            <br />
+            <span className="text-gray-400 ml-4">{'// 🚀 Building the future, one line at a time'}</span>
+            <br />
+            <span className="text-purple-500 ml-4">await</span>{' '}
+            <span className="text-orange-500">Promise</span>
+            <span className="text-gray-400">.</span>
+            <span className="text-blue-400">all</span>
+            <span className="text-gray-400">{'('}</span>
+            <span className="text-red-400">experiences</span>
+            <span className="text-gray-400">{')'}</span>
+            <br />
+            <span className="text-gray-400">{'}'}</span>
           </h2>
           <p className={SECTION_CLASSES.subtitle}>
             {tr('experience.subtitle')}

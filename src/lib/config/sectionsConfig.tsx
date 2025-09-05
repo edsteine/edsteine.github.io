@@ -63,11 +63,23 @@ const TechEvolutionTimeline = dynamic(() => import("@/components/features/timeli
 
 const EducationTitle = () => (
   <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
-    <span className="text-indigo-600 dark:text-indigo-400 font-mono text-lg">class</span>{' '}
-    <span className="text-green-500">Education</span>{' '}
-    <span className="text-gray-400">{'{'}</span>
+    <span className="text-blue-400 font-mono text-lg">const</span>{' '}
+    <span className="text-yellow-500">educationPath</span> 
+    <span className="text-gray-400">{' = '}</span>
+    <span className="text-green-500">() =&gt;</span> 
+    <span className="text-gray-400">{' {'}</span>
     <br />
-    <span className="text-gray-400 ml-8">{'}'}</span>
+    <span className="text-gray-400 ml-4">{'// 🎓 Never stop learning'}</span>
+    <br />
+    <span className="text-purple-500 ml-4">return</span>{' '}
+    <span className="text-orange-500">knowledge</span>
+    <span className="text-gray-400">.</span>
+    <span className="text-blue-400">map</span>
+    <span className="text-gray-400">{'('}</span>
+    <span className="text-red-400">growth</span>
+    <span className="text-gray-400">{')'}</span>
+    <br />
+    <span className="text-gray-400">{'}'}</span>
   </h3>
 );
 

@@ -90,11 +90,23 @@ const SkillsSection: React.FC = () => {
       aria-label="Technical skills and competencies"
     >
       <h3 className={SECTION_CLASSES.title}>
-        <span className="text-green-500 font-mono text-lg">function</span> 
-        <span className="text-yellow-500">get{tr('skills.title').replace(' ', '')}</span><span className="text-blue-400">()</span> 
+        <span className="text-blue-400 font-mono text-lg">const</span>{' '}
+        <span className="text-yellow-500">get{tr('skills.title').replace(' ', '')}</span> 
+        <span className="text-gray-400">{' = '}</span>
+        <span className="text-green-500">() =&gt;</span> 
         <span className="text-gray-400">{' {'}</span>
         <br />
-        <span className="text-gray-400 ml-8">{'}'}</span>
+        <span className="text-gray-400 ml-4">{'// Loading amazing skills...'}</span>
+        <br />
+        <span className="text-purple-500 ml-4">return</span>{' '}
+        <span className="text-orange-500">skills</span>
+        <span className="text-gray-400">.</span>
+        <span className="text-blue-400">filter</span>
+        <span className="text-gray-400">{'('}</span>
+        <span className="text-red-400">s =&gt; s.level</span> 
+        <span className="text-gray-400">{' > 80)'}</span>
+        <br />
+        <span className="text-gray-400">{'}'}</span>
       </h3>
 
       <div className={SECTION_CLASSES.grid}>
