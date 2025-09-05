@@ -1,6 +1,6 @@
 // Fonts Configuration - Uses master config for language info
 import { Geist, Geist_Mono, Noto_Sans_Arabic } from "next/font/google";
-import { MASTER_CONFIG } from '@/config/masterConfig';
+import { MASTER_CONFIG } from '@/lib/config/masterConfig';
 
 // English/Default fonts
 export const geistSans = Geist({

@@ -1,8 +1,8 @@
 // Site configuration - Now derives from master config (Single Source of Truth)
-import { getSiteConfig, getNavigationLinks, MASTER_CONFIG } from '@/config/masterConfig';
+import { getSiteConfig, getNavigationLinks, MASTER_CONFIG } from '@/lib/config/masterConfig';
 
 // Re-export interfaces for type safety
-export type { PersonalInfo as SiteConfig, SocialLinks, ImagePaths as ImageConfig } from '@/config/masterConfig';
+export type { PersonalInfo as SiteConfig, SocialLinks, ImagePaths as ImageConfig } from '@/lib/config/masterConfig';
 
 export interface NavigationLink {
   name: string;

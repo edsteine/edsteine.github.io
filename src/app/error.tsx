@@ -2,7 +2,8 @@
 "use client";
 
 import { useEffect } from 'react';
-import ErrorPage from '@/app/_components/error/ErrorPage';
+import ErrorPage from '@/components/pages/ErrorPage';
+import { errorReportingService } from '@/lib/services/errorReporting';
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -11,8 +12,18 @@ interface ErrorProps {
 
 export default function Error({ error }: ErrorProps) {
   useEffect(() => {
-    // Log the error to error reporting service
-    console.error('Application error:', error);
+    // Report error to monitoring service
+    errorReportingService.captureException(error, {
+      tags: { 
+        component: 'ErrorBoundary',
+        digest: error.digest || 'unknown'
+      },
+      extra: {
+        errorDigest: error.digest,
+        timestamp: new Date().toISOString()
+      },
+      level: 'error'
+    });
   }, [error]);
 
   return (

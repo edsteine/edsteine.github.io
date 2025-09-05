@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/app/_components/ui/ThemeProvider";
-import { LanguageProvider } from "@/app/_contexts/LanguageContext";
-import ErrorBoundary from "@/app/_components/ErrorBoundary";
-import DynamicLayout from "@/app/_components/layout/DynamicLayout";
+import { ThemeProvider } from "@/components/layout/providers/ThemeProvider";
+import { LanguageProvider } from "@/components/layout/providers/LanguageProvider";
+import ErrorBoundary from "@/components/layout/providers/ErrorBoundary";
+import DynamicLayout from "@/components/layout/DynamicLayout";
 import { getMetadata } from "@/lib/config/metadataConfig";
+import { WebVitals } from "./web-vitals";
 
 // Default metadata (English) - will be overridden by page-level metadata
 export const metadata: Metadata = getMetadata('en');
@@ -26,6 +27,7 @@ export default function RootLayout({
             </ThemeProvider>
           </LanguageProvider>
         </ErrorBoundary>
+        <WebVitals />
       </body>
     </html>
   );

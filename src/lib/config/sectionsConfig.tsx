@@ -1,24 +1,64 @@
 // Sections Configuration - Single Responsibility: Define page sections
 import dynamic from 'next/dynamic';
 import React from 'react';
-import { SECTION_STYLES } from '@/app/_components/ui/LazySection';
+import { SECTION_STYLES } from '@/components/features/common/LazySection';
+import SectionSkeleton from '@/components/ui/feedback/SectionSkeleton';
 
 // Core sections (immediate load)
-import HeroSection from "@/app/_components/sections/HeroSection";
-import AboutSection from "@/app/_components/sections/AboutSection";
-import SkillsSection from "@/app/_components/sections/SkillsSection";
+import HeroSection from "@/domains/hero/components/HeroSection";
+import AboutSection from "@/domains/about/components/AboutSection";
+import SkillsSection from "@/domains/skills/components/SkillsSection";
 
-// Lazy-loaded sections
-const ExperienceSection = dynamic(() => import("@/app/_components/sections/ExperienceSection"));
-const EducationSection = dynamic(() => import("@/app/_components/sections/EducationSection"));
-const ProjectsSection = dynamic(() => import("@/app/_components/sections/ProjectsSection"));
-const ContactSection = dynamic(() => import("@/app/_components/sections/ContactSection"));
-const LanguagesSection = dynamic(() => import("@/app/_components/sections/LanguagesSection"));
-const InterestsSection = dynamic(() => import("@/app/_components/sections/InterestsSection"));
-const ResumeDownloadSection = dynamic(() => import("@/app/_components/sections/ResumeDownloadSection"));
-const ProjectStats = dynamic(() => import("@/app/_components/features/ProjectStats"));
-const TestimonialsSection = dynamic(() => import("@/app/_components/features/TestimonialsSection"));
-const TechEvolutionTimeline = dynamic(() => import("@/app/_components/features/TechEvolutionTimeline"));
+// Lazy-loaded sections with optimized loading states
+const ExperienceSection = dynamic(() => import("@/domains/experience/components/ExperienceSection"), {
+  loading: () => <SectionSkeleton title="Experience" variant="timeline" height="lg" />,
+  ssr: false
+});
+
+const EducationSection = dynamic(() => import("@/domains/education/components/EducationSection"), {
+  loading: () => <SectionSkeleton title="Education" variant="cards" height="md" />,
+  ssr: false
+});
+
+const ProjectsSection = dynamic(() => import("@/domains/projects/components/ProjectsSection"), {
+  loading: () => <SectionSkeleton title="Projects" variant="cards" height="lg" />,
+  ssr: false
+});
+
+const ContactSection = dynamic(() => import("@/domains/contact/components/ContactSection"), {
+  loading: () => <SectionSkeleton title="Contact" variant="form" height="md" />,
+  ssr: false
+});
+
+const LanguagesSection = dynamic(() => import("@/domains/languages/components/LanguagesSection"), {
+  loading: () => <SectionSkeleton title="Languages" variant="stats" height="sm" />,
+  ssr: false
+});
+
+const InterestsSection = dynamic(() => import("@/domains/interests/components/InterestsSection"), {
+  loading: () => <SectionSkeleton title="Interests" variant="cards" height="sm" />,
+  ssr: false
+});
+
+const ResumeDownloadSection = dynamic(() => import("@/domains/resume/components/ResumeDownloadSection"), {
+  loading: () => <SectionSkeleton title="Resume" variant="stats" height="sm" />,
+  ssr: false
+});
+
+const ProjectStats = dynamic(() => import("@/domains/projects/components/ProjectStats"), {
+  loading: () => <SectionSkeleton title="Project Statistics" variant="stats" height="sm" />,
+  ssr: false
+});
+
+const TestimonialsSection = dynamic(() => import("@/domains/testimonials/components/TestimonialsSection"), {
+  loading: () => <SectionSkeleton title="Testimonials" variant="cards" height="md" />,
+  ssr: false
+});
+
+const TechEvolutionTimeline = dynamic(() => import("@/components/features/timeline/TechEvolutionTimeline"), {
+  loading: () => <SectionSkeleton title="Technology Evolution" variant="timeline" height="lg" />,
+  ssr: false
+});
 
 // Education custom title component
 const EducationTitle = () => (
