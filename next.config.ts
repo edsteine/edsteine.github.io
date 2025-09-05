@@ -8,7 +8,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 const nextConfig: NextConfig = {
   output: 'export',
-  basePath: process.env['NEXT_PUBLIC_BASE_PATH'] || '',
+  basePath: '',  // Fixed: Empty basePath for GitHub Pages
+  assetPrefix: '', // Fixed: Empty assetPrefix for GitHub Pages
+  trailingSlash: true, // Fixed: Add trailing slash for static hosting
   
   // Image optimization configuration
   images: {
