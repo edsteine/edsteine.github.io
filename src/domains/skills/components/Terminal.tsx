@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 
 interface TerminalSectionProps {
   title: string;
@@ -26,7 +26,7 @@ const TerminalSection: React.FC<TerminalSectionProps> = ({ title, commands }) =>
 
   return (
     <div className="bg-gray-900 rounded-lg p-4 font-mono text-sm shadow-2xl border border-gray-700">
-      {/* Terminal header */}
+      {}
       <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-700">
         <div className="flex space-x-2">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -37,7 +37,7 @@ const TerminalSection: React.FC<TerminalSectionProps> = ({ title, commands }) =>
         <div className="text-gray-500 text-xs">⌘ + K</div>
       </div>
 
-      {/* Terminal content */}
+      {}
       <div className="space-y-2">
         <div className="flex items-center">
           <span className="text-green-400 mr-2">$</span>
@@ -64,7 +64,7 @@ const TerminalSection: React.FC<TerminalSectionProps> = ({ title, commands }) =>
         )}
       </div>
 
-      {/* Control buttons */}
+      {}
       <div className="flex justify-between items-center mt-4 pt-2 border-t border-gray-700">
         <button
           onClick={runCommand}

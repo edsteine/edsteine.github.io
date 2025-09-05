@@ -1,5 +1,5 @@
 import type { Education } from '@/lib/types/content';
-// Certification and ProfessionalDevelopment types available for future use
+
 
 export const educationData: Education[] = [
   {

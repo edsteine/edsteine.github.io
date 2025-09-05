@@ -1,4 +1,4 @@
-// Form validation utilities
+
 export interface ValidationRule {
   required?: boolean;
   minLength?: number;
@@ -19,7 +19,7 @@ export interface FormData {
   [key: string]: string;
 }
 
-// Validation constants
+
 export const VALIDATION_PATTERNS = {
   email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
   phone: /^[\+]?[1-9][\d]{0,15}$/,
@@ -43,32 +43,32 @@ export function validateField(
   fieldName: string, 
   rules: ValidationRule
 ): string | null {
-  // Required validation
+  
   if (rules.required && !value.trim()) {
     return VALIDATION_MESSAGES.required(fieldName);
   }
 
-  // Skip other validations if field is empty and not required
+  
   if (!value.trim() && !rules.required) {
     return null;
   }
 
-  // Min length validation
+  
   if (rules.minLength && value.length < rules.minLength) {
     return VALIDATION_MESSAGES.minLength(fieldName, rules.minLength);
   }
 
-  // Max length validation
+  
   if (rules.maxLength && value.length > rules.maxLength) {
     return VALIDATION_MESSAGES.maxLength(fieldName, rules.maxLength);
   }
 
-  // Pattern validation
+  
   if (rules.pattern && !rules.pattern.test(value)) {
     return VALIDATION_MESSAGES.pattern(fieldName);
   }
 
-  // Custom validation
+  
   if (rules.custom) {
     return rules.custom(value);
   }
@@ -133,9 +133,9 @@ export function sanitizeFormData(formData: FormData): FormData {
   const sanitized: FormData = {};
   
   Object.entries(formData).forEach(([key, value]) => {
-    // Basic HTML tag removal and trimming
+    
     sanitized[key] = value
-      .replace(/<[^>]*>/g, '') // Remove HTML tags
+      .replace(/<[^>]*>/g, '') 
       .trim();
   });
   

@@ -45,24 +45,24 @@ const SectionSkeleton: React.FC<SectionSkeletonProps> = ({
       role="status"
       aria-live="polite"
     >
-      {/* Section Header Skeleton */}
+      {}
       <div className="text-center mb-12 animate-pulse">
         <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded-md mx-auto mb-4 w-64"></div>
         <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded-md mx-auto w-96 max-w-full"></div>
       </div>
 
-      {/* Content Skeleton */}
+      {}
       <div className="animate-pulse">
         {renderVariant()}
       </div>
 
-      {/* Screen Reader Text */}
+      {}
       <span className="sr-only">{description}</span>
     </section>
   );
 };
 
-// Timeline variant skeleton
+
 const TimelineSkeleton: React.FC = () => (
   <div className="space-y-8">
     {[1, 2, 3].map((item) => (
@@ -79,7 +79,7 @@ const TimelineSkeleton: React.FC = () => (
   </div>
 );
 
-// Cards variant skeleton
+
 const CardsSkeleton: React.FC = () => (
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {[1, 2, 3, 4, 5, 6].map((item) => (
@@ -99,7 +99,7 @@ const CardsSkeleton: React.FC = () => (
   </div>
 );
 
-// Form variant skeleton
+
 const FormSkeleton: React.FC = () => (
   <div className="max-w-2xl mx-auto space-y-6">
     <div className="h-12 bg-gray-200 dark:bg-gray-700 rounded-md w-full"></div>
@@ -109,7 +109,7 @@ const FormSkeleton: React.FC = () => (
   </div>
 );
 
-// Stats variant skeleton
+
 const StatsSkeleton: React.FC = () => (
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
     {[1, 2, 3].map((item) => (
@@ -123,4 +123,4 @@ const StatsSkeleton: React.FC = () => (
 );
 
 export default SectionSkeleton;
-export { TimelineSkeleton, CardsSkeleton, FormSkeleton, StatsSkeleton };
+export { CardsSkeleton, FormSkeleton, StatsSkeleton, TimelineSkeleton };

@@ -1,4 +1,4 @@
-// English content data
+
 
 export const appContentData = {
   hero: {

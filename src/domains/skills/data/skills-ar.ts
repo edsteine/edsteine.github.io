@@ -1,28 +1,28 @@
-import { TechnicalSkillsMap, SkillCategory, Skill } from '@/lib/types/content';
+import { Skill, SkillCategory, TechnicalSkillsMap } from '@/lib/types/content';
 
 export const technicalSkillsMap: TechnicalSkillsMap = {
-  // Mobile Development
+  
   "Flutter": { level: 95, category: "تطوير الهاتف المحمول", yearsUsed: 6, projectsUsed: 15 },
   "React Native": { level: 88, category: "تطوير الهاتف المحمول", yearsUsed: 4, projectsUsed: 8 },
   "Android Native": { level: 85, category: "تطوير الهاتف المحمول", yearsUsed: 5, projectsUsed: 12 },
   "Dart": { level: 93, category: "تطوير الهاتف المحمول", yearsUsed: 6, projectsUsed: 15 },
   "Kotlin": { level: 82, category: "تطوير الهاتف المحمول", yearsUsed: 4, projectsUsed: 10 },
 
-  // Frontend Development  
+  
   "React": { level: 90, category: "تطوير الواجهة الأمامية", yearsUsed: 5, projectsUsed: 20 },
   "JavaScript": { level: 92, category: "تطوير الواجهة الأمامية", yearsUsed: 8, projectsUsed: 35 },
   "TypeScript": { level: 85, category: "تطوير الواجهة الأمامية", yearsUsed: 3, projectsUsed: 12 },
   "Next.js": { level: 87, category: "تطوير الواجهة الأمامية", yearsUsed: 2, projectsUsed: 8 },
   "Tailwind CSS": { level: 90, category: "تطوير الواجهة الأمامية", yearsUsed: 3, projectsUsed: 15 },
 
-  // Backend Development
+  
   "Spring Boot": { level: 88, category: "تطوير الواجهة الخلفية", yearsUsed: 4, projectsUsed: 12 },
   "Node.js": { level: 85, category: "تطوير الواجهة الخلفية", yearsUsed: 4, projectsUsed: 18 },
   "Express.js": { level: 83, category: "تطوير الواجهة الخلفية", yearsUsed: 3, projectsUsed: 15 },
   "PostgreSQL": { level: 87, category: "تطوير الواجهة الخلفية", yearsUsed: 5, projectsUsed: 20 },
   "PostGIS": { level: 85, category: "تطوير الواجهة الخلفية", yearsUsed: 3, projectsUsed: 8 },
 
-  // Cloud & DevOps
+  
   "AWS": { level: 80, category: "السحابة والعمليات التطويرية", yearsUsed: 3, projectsUsed: 10 },
   "Docker": { level: 78, category: "السحابة والعمليات التطويرية", yearsUsed: 2, projectsUsed: 8 },
   "Git": { level: 95, category: "السحابة والعمليات التطويرية", yearsUsed: 9, projectsUsed: 50 },

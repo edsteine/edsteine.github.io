@@ -103,7 +103,7 @@ const LEGEND_DATA = [
   { type: 'project' as EventType, label: 'Major Projects' },
 ] as const;
 
-// Simple icon components instead of emoji
+
 const WorkIcon = () => (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
     <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h2zM8 5a1 1 0 011-1h2a1 1 0 011 1v1H8V5zM4 8v6h12V8H4z" clipRule="evenodd"/>
@@ -150,10 +150,10 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
 
   return (
     <div className={TIMELINE_CLASSES.container} role="region" aria-label="Interactive timeline">
-      {/* Timeline line */}
+      {}
       <div className={TIMELINE_CLASSES.line} aria-hidden="true" />
 
-      {/* Timeline events */}
+      {}
       <div className={TIMELINE_CLASSES.eventsContainer}>
         {events.map((event) => {
           const isSelected = selectedEvent === event.id;
@@ -164,14 +164,14 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
               key={event.id}
               className={TIMELINE_CLASSES.eventContainer}
             >
-              {/* Timeline node */}
+              {}
               <div 
                 className={`${TIMELINE_CLASSES.node} ${typeStyles.color}`}
                 role="img"
                 aria-label={`${event.type} event marker`}
               />
 
-              {/* Content card */}
+              {}
               <div
                 className={TIMELINE_CLASSES.cardContainer}
                 onClick={() => toggleEvent(event.id)}
@@ -189,7 +189,7 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
                 <div className={`${TIMELINE_CLASSES.card} ${
                   isSelected ? TIMELINE_CLASSES.cardSelected : TIMELINE_CLASSES.cardHover
                 }`}>
-                  {/* Header */}
+                  {}
                   <header className={TIMELINE_CLASSES.header}>
                     <div className={TIMELINE_CLASSES.iconContainer} aria-hidden="true">
                       {getTypeIcon(event.type)}
@@ -212,7 +212,7 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
                     </div>
                   </header>
 
-                  {/* Description */}
+                  {}
                   <div className={TIMELINE_CLASSES.description}>
                     {Array.isArray(event.description) 
                       ? event.description.map((desc, idx) => (
@@ -224,7 +224,7 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
                     }
                   </div>
 
-                  {/* Key Achievements */}
+                  {}
                   {event.achievements.length > 0 && (
                     <section className={TIMELINE_CLASSES.achievementsContainer}>
                       <h4 className={TIMELINE_CLASSES.achievementsTitle}>
@@ -248,7 +248,7 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
                     </section>
                   )}
 
-                  {/* Technologies */}
+                  {}
                   {event.technologies.length > 0 && (
                     <section className={TIMELINE_CLASSES.techContainer} aria-label="Technologies used">
                       {event.technologies.slice(0, isSelected ? event.technologies.length : TIMELINE_CONFIG.previewTechnologies).map((tech, techIndex) => (
@@ -267,7 +267,7 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
                     </section>
                   )}
 
-                  {/* Expand/Collapse indicator */}
+                  {}
                   <footer className={TIMELINE_CLASSES.expandContainer}>
                     <span className={TIMELINE_CLASSES.expandText}>
                       {isSelected ? 'Click to collapse' : 'Click to expand'}
@@ -289,7 +289,7 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
         })}
       </div>
 
-      {/* Legend */}
+      {}
       <footer className={TIMELINE_CLASSES.legend} role="contentinfo">
         <div className={TIMELINE_CLASSES.legendContainer}>
           {LEGEND_DATA.map((item) => {

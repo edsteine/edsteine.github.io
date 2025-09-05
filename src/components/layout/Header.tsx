@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
-import { ThemeToggle } from '../ui/controls/ThemeToggle';
-import LanguageSwitcher from '../ui/controls/LanguageSwitcher';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
-import { siteConfig, navigationLinks } from '@/lib/config/siteConfig';
+import { navigationLinks, siteConfig } from '@/lib/config/siteConfig';
+import { useState } from 'react';
+import LanguageSwitcher from '../ui/controls/LanguageSwitcher';
+import { ThemeToggle } from '../ui/controls/ThemeToggle';
 
 const Header = () => {
   const { t } = useLanguage();
@@ -36,14 +36,14 @@ const Header = () => {
           {siteConfig.name}
         </a>
 
-        {/* Desktop Navigation */}
+        {}
         <nav className="hidden md:flex items-center gap-4 text-sm">
           {navLinks}
           <LanguageSwitcher />
           <ThemeToggle />
         </nav>
 
-        {/* Mobile Menu Button */}
+        {}
         <div className="md:hidden flex items-center gap-2">
           <LanguageSwitcher />
           <ThemeToggle />
@@ -60,7 +60,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Overlay */}
+        {}
         {isMenuOpen && (
           <div className="md:hidden absolute top-14 left-0 w-full bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800 shadow-lg">
             <nav className="flex flex-col items-center py-4 space-y-4 text-base">

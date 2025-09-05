@@ -49,7 +49,7 @@ class ErrorReportingService {
   captureException(error: Error, context?: ErrorContext): void {
     const errorReport = this.createErrorReport(error, context);
     
-    // Log to console in development
+    
     if (process.env.NODE_ENV === 'development') {
       console.group('🚨 Error Captured');
       console.error('Error:', error);
@@ -58,12 +58,12 @@ class ErrorReportingService {
       console.groupEnd();
     }
 
-    // Send to external service in production
+    
     if (this.isEnabled) {
       this.sendToSentry(errorReport);
     }
 
-    // Always log to local storage for debugging
+    
     this.logToLocalStorage(errorReport);
   }
 
@@ -78,7 +78,7 @@ class ErrorReportingService {
     }
 
     if (this.isEnabled) {
-      // Send message to external service
+      
       this.sendMessageToSentry(message, context);
     }
   }
@@ -123,7 +123,7 @@ class ErrorReportingService {
     if (!this.sentryDsn) return;
 
     try {
-      // Simple Sentry API call without SDK
+      
       const response = await fetch(`https://sentry.io/api/0/envelope/`, {
         method: 'POST',
         headers: {
@@ -156,7 +156,7 @@ class ErrorReportingService {
   }
 
   private async sendMessageToSentry(message: string, context?: ErrorContext): Promise<void> {
-    // Similar to sendToSentry but for messages
+    
     console.log('Message captured:', message, context);
   }
 
@@ -167,7 +167,7 @@ class ErrorReportingService {
       const errors = JSON.parse(localStorage.getItem('error_logs') || '[]');
       errors.push(errorReport);
       
-      // Keep only last 10 errors to prevent storage bloat
+      
       const recentErrors = errors.slice(-10);
       localStorage.setItem('error_logs', JSON.stringify(recentErrors));
     } catch (error) {
@@ -215,11 +215,11 @@ class ErrorReportingService {
   }
 }
 
-// Global error handler
+
 if (typeof window !== 'undefined') {
   const errorService = ErrorReportingService.getInstance();
 
-  // Handle unhandled promise rejections
+  
   window.addEventListener('unhandledrejection', (event) => {
     errorService.captureException(
       new Error(`Unhandled Promise Rejection: ${event.reason}`),
@@ -227,7 +227,7 @@ if (typeof window !== 'undefined') {
     );
   });
 
-  // Handle global errors
+  
   window.addEventListener('error', (event) => {
     errorService.captureException(event.error || new Error(event.message), {
       tags: { type: 'global_error' },
@@ -240,7 +240,7 @@ if (typeof window !== 'undefined') {
   });
 }
 
-// Extend Window interface for TypeScript
+
 declare global {
   interface Window {
     __ERROR_USER_CONTEXT?: { session?: string; userAgent?: string };

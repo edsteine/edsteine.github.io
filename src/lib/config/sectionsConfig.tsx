@@ -1,15 +1,15 @@
-// Sections Configuration - Single Responsibility: Define page sections
-import dynamic from 'next/dynamic';
-import React from 'react';
+
 import { SECTION_STYLES } from '@/components/features/common/LazySection';
 import SectionSkeleton from '@/components/ui/feedback/SectionSkeleton';
+import dynamic from 'next/dynamic';
+import React from 'react';
 
-// Core sections (immediate load)
-import HeroSection from "@/domains/hero/components/HeroSection";
+
 import AboutSection from "@/domains/about/components/AboutSection";
+import HeroSection from "@/domains/hero/components/HeroSection";
 import SkillsSection from "@/domains/skills/components/SkillsSection";
 
-// Lazy-loaded sections with optimized loading states
+
 const ExperienceSection = dynamic(() => import("@/domains/experience/components/ExperienceSection"), {
   loading: () => <SectionSkeleton title="Experience" variant="timeline" height="lg" />,
   ssr: false
@@ -60,7 +60,7 @@ const TechEvolutionTimeline = dynamic(() => import("@/components/features/timeli
   ssr: false
 });
 
-// Education custom title component
+
 const EducationTitle = () => (
   <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white">
     <span className="text-indigo-600 dark:text-indigo-400 font-mono text-lg">class</span>{' '}
@@ -71,7 +71,7 @@ const EducationTitle = () => (
   </h3>
 );
 
-// Section configuration interface
+
 export interface SectionConfig {
   id?: string;
   component: React.ComponentType;
@@ -83,7 +83,7 @@ export interface SectionConfig {
   customClassName?: string;
 }
 
-// Main sections configuration - Easy to modify!
+
 export const PORTFOLIO_SECTIONS: SectionConfig[] = [
   {
     component: HeroSection,

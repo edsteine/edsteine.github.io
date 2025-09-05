@@ -41,7 +41,7 @@ const StatCard: React.FC<StatCardProps> = ({
   );
 };
 
-// Simple icon components instead of emoji
+
 const UserIcon = () => (
   <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
     <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
@@ -61,7 +61,7 @@ const RocketIcon = () => (
 );
 
 const ProjectStats: React.FC = () => {
-  // Move data to constants - no more hardcoded arrays in component
+  
   const MAIN_STATS = [
     {
       icon: <UserIcon />,
@@ -102,7 +102,7 @@ const ProjectStats: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto py-12">
-      {/* Header - Simple, no complex animations */}
+      {}
       <div className="text-center mb-12">
         <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
           <span className="text-blue-600">Project</span>{' '}
@@ -113,14 +113,14 @@ const ProjectStats: React.FC = () => {
         </p>
       </div>
 
-      {/* Main Statistics - Simple grid, minimal animations */}
+      {}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {MAIN_STATS.map((stat, index) => (
           <StatCard key={index} {...stat} />
         ))}
       </div>
 
-      {/* Quick Metrics - Static, no animations */}
+      {}
       <div className="bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 mb-12">
         <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">
           Quick Stats Overview
@@ -140,7 +140,7 @@ const ProjectStats: React.FC = () => {
         </div>
       </div>
 
-      {/* Technology Distribution - Static bars, no animations */}
+      {}
       <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg">
         <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
           <ChartIcon />

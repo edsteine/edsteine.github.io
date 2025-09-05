@@ -1,9 +1,9 @@
-// Global Error Page - Next.js convention for handling runtime errors
+
 "use client";
 
-import { useEffect } from 'react';
 import ErrorPage from '@/components/pages/ErrorPage';
 import { errorReportingService } from '@/lib/services/errorReporting';
+import { useEffect } from 'react';
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -12,7 +12,7 @@ interface ErrorProps {
 
 export default function Error({ error }: ErrorProps) {
   useEffect(() => {
-    // Report error to monitoring service
+    
     errorReportingService.captureException(error, {
       tags: { 
         component: 'ErrorBoundary',

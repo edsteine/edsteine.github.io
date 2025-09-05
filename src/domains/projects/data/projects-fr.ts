@@ -25,5 +25,5 @@ export const projectsData: Project[] = [
       scale: "10M+ enregistrements"
     }
   }
-  // Plus de projets...
+  
 ];

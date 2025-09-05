@@ -1,10 +1,9 @@
-// Lazy Section - Single Responsibility: Handle lazy loading with consistent styling
-import React, { Suspense } from 'react';
-import { ComponentType } from 'react';
-import AnimatedSection from './AnimatedSection';
-import { SectionSkeleton } from '@/components/ui/feedback/LoadingSpinner';
 
-// Section style configurations
+import { SectionSkeleton } from '@/components/ui/feedback/LoadingSpinner';
+import React, { ComponentType, Suspense } from 'react';
+import AnimatedSection from './AnimatedSection';
+
+
 export const SECTION_STYLES = {
   default: "max-w-6xl mx-auto p-8 pb-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700",
   gradient: "max-w-6xl mx-auto p-8 pb-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 border-b border-gray-200 dark:border-gray-700",

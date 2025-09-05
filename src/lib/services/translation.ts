@@ -1,6 +1,6 @@
-// Translation service - Single Responsibility: Translation loading and key resolution
-import { en } from '../../content/en/translations';
+
 import { ar } from '../../content/ar/translations';
+import { en } from '../../content/en/translations';
 import { fr } from '../../content/fr/translations';
 import { languageConfig } from './language';
 
@@ -15,12 +15,12 @@ export class TranslationService {
     const keys = key.split('.');
     let value: unknown = translations[language];
     
-    // Try to get the translation in the requested language
+    
     for (const k of keys) {
       if (value && typeof value === 'object' && value !== null && k in value) {
         value = (value as Record<string, unknown>)[k];
       } else {
-        // Fallback to default language if translation missing
+        
         return TranslationService.getFallbackTranslation(keys, key);
       }
     }
@@ -36,7 +36,7 @@ export class TranslationService {
         fallbackValue = (fallbackValue as Record<string, unknown>)[fallbackKey];
       } else {
         console.warn(`Translation missing for key: ${originalKey}`);
-        return originalKey; // Return key if even fallback translation is missing
+        return originalKey; 
       }
     }
     

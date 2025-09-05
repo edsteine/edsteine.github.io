@@ -1,13 +1,13 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import InteractiveTimeline from '@/components/features/timeline/InteractiveTimeline';
-import { experienceData } from '@/domains/experience/data/experience';
+import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import TechnologyBadge from '@/components/ui/display/TechnologyBadge';
+import { experienceData } from '@/domains/experience/data/experience';
+import { motion } from 'framer-motion';
+import React from 'react';
 
-// Configuration constants following Open/Closed Principle
+
 const EXPERIENCE_CONFIG = {
   animation: {
     initial: { opacity: 0, y: 20 },
@@ -36,10 +36,10 @@ const SECTION_CLASSES = {
 const ExperienceSection: React.FC = () => {
   const { t } = useLanguage();
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
 
-  // Transform experience data to timeline format
+  
   const timelineEvents = experienceData.map((exp, index) => ({
     id: String(index + 1),
     title: exp.role,
@@ -52,7 +52,7 @@ const ExperienceSection: React.FC = () => {
     type: 'work' as const
   }));
 
-  // Calculate experience summary
+  
   const experienceSummary = {
     totalPositions: experienceData.length,
     totalCompanies: new Set(experienceData.map(exp => exp.company)).size,
@@ -63,15 +63,15 @@ const ExperienceSection: React.FC = () => {
     totalTechnologies: new Set(experienceData.flatMap(exp => exp.fullTechStack || [])).size
   };
 
-  // Get unique technologies across all experiences
+  
   const allTechnologies = Array.from(
     new Set(experienceData.flatMap(exp => exp.fullTechStack || []))
-  ).slice(0, 12); // Show top 12 technologies
+  ).slice(0, 12); 
 
   return (
     <section id="experience" className={SECTION_CLASSES.container}>
       <div className={SECTION_CLASSES.wrapper}>
-        {/* Header */}
+        {}
         <motion.header
           className={SECTION_CLASSES.header}
           initial={EXPERIENCE_CONFIG.animation.initial}
@@ -87,7 +87,7 @@ const ExperienceSection: React.FC = () => {
           </p>
         </motion.header>
 
-        {/* Experience Summary */}
+        {}
         <motion.div
           className={SECTION_CLASSES.summaryGrid}
           initial={EXPERIENCE_CONFIG.summaryAnimation.initial}
@@ -129,7 +129,7 @@ const ExperienceSection: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Interactive Timeline */}
+        {}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,7 +139,7 @@ const ExperienceSection: React.FC = () => {
           <InteractiveTimeline events={timelineEvents} />
         </motion.div>
 
-        {/* Technology Overview */}
+        {}
         <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}

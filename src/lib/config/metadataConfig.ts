@@ -1,4 +1,4 @@
-// Metadata Configuration per language
+
 import type { Metadata } from "next";
 
 export const METADATA_BY_LANGUAGE: Record<string, Metadata> = {

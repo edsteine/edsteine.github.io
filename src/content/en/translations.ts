@@ -1,7 +1,7 @@
 import { TranslationKeys } from '@/lib/types/content';
 
 export const en: TranslationKeys = {
-  // Navigation
+  
   navigation: {
     home: "Home",
     about: "About",
@@ -13,7 +13,7 @@ export const en: TranslationKeys = {
     contact: "Contact"
   },
 
-  // Hero Section
+  
   hero: {
     greeting: "Hello, I'm",
     name: "Adil Ajdaa",
@@ -33,7 +33,7 @@ export const en: TranslationKeys = {
     }
   },
 
-  // About Section
+  
   about: {
     title: "About Me",
     subtitle: "const developer = {",
@@ -46,7 +46,7 @@ export const en: TranslationKeys = {
     ]
   },
 
-  // Skills Section
+  
   skills: {
     title: "Technical Skills",
     subtitle: "const skills = [",
@@ -58,7 +58,7 @@ export const en: TranslationKeys = {
     databases: "Databases"
   },
 
-  // Experience Section
+  
   experience: {
     title: "Work Experience",
     subtitle: "Professional Journey",
@@ -68,7 +68,7 @@ export const en: TranslationKeys = {
     technologies: "Technologies Used"
   },
 
-  // Projects Section
+  
   projects: {
     title: "Featured Projects",
     subtitle: "Some of my recent work",
@@ -84,7 +84,7 @@ export const en: TranslationKeys = {
     viewProject: "View Project"
   },
 
-  // Testimonials Section
+  
   testimonials: {
     title: "Client Testimonials",
     subtitle: "What colleagues and clients say about working with me",
@@ -99,13 +99,13 @@ export const en: TranslationKeys = {
     goToTestimonial: "Go to testimonial"
   },
 
-  // Languages Section
+  
   languages: {
     title: "Languages",
     subtitle: "Communication across cultures"
   },
 
-  // Resume Download Section
+  
   resumeDownload: {
     title: "Download Resume",
     description: "Get a comprehensive overview of my experience and skills",
@@ -113,7 +113,7 @@ export const en: TranslationKeys = {
     lastUpdated: "Last updated"
   },
 
-  // Contact Section
+  
   contact: {
     title: "Get In Touch",
     subtitle: "Ready to work together?",
@@ -140,7 +140,7 @@ export const en: TranslationKeys = {
     }
   },
 
-  // Education Section
+  
   education: {
     title: "Education & Certifications",
     subtitle: "Academic Foundation & Continuous Learning",
@@ -150,7 +150,7 @@ export const en: TranslationKeys = {
     achievements: "Achievements"
   },
 
-  // Common
+  
   common: {
     readMore: "Read More",
     readLess: "Read Less",

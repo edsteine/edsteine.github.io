@@ -48,5 +48,5 @@ export const projectsData: Project[] = [
       features: "20+ modules"
     }
   }
-  // More projects...
+  
 ];

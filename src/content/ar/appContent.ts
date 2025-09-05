@@ -1,7 +1,7 @@
-// Arabic content data
+
 
 export const appContentData = {
-  // Navigation
+  
   navigation: {
     home: "الرئيسية",
     about: "نبذة عني",
@@ -13,7 +13,7 @@ export const appContentData = {
     contact: "اتصل بي"
   },
 
-  // Hero Section
+  
   hero: {
     greeting: "مرحباً، أنا",
     name: "عادل أجداع",
@@ -33,7 +33,7 @@ export const appContentData = {
     }
   },
 
-  // About Section
+  
   about: {
     title: "نبذة عني",
     subtitle: "const developer = {",
@@ -46,7 +46,7 @@ export const appContentData = {
     ]
   },
 
-  // Skills Section
+  
   skills: {
     title: "المهارات التقنية",
     subtitle: "const skills = [",
@@ -60,7 +60,7 @@ export const appContentData = {
     }
   },
 
-  // Experience Section
+  
   experience: {
     title: "الخبرة المهنية",
     subtitle: "رحلتي المهنية",
@@ -70,7 +70,7 @@ export const appContentData = {
     technologies: "التقنيات المستخدمة"
   },
 
-  // Projects Section
+  
   projects: {
     title: "المشاريع المميزة",
     subtitle: "بعض من أعمالي الحديثة",
@@ -84,7 +84,7 @@ export const appContentData = {
     results: "النتائج والتأثير"
   },
 
-  // Testimonials Section
+  
   testimonials: {
     title: "آراء العملاء",
     subtitle: "ما يقوله الزملاء والعملاء عن العمل معي",
@@ -102,7 +102,7 @@ export const appContentData = {
     }
   },
 
-  // Contact Section
+  
   contact: {
     title: "تواصل معي",
     subtitle: "مستعد للعمل معاً؟",
@@ -133,7 +133,7 @@ export const appContentData = {
     }
   },
 
-  // Footer
+  
   footer: {
     description: "مطور تطبيقات جوال أول ومهندس معماري تقني متخصص في التطبيقات القابلة للتوسع",
     quickLinks: "روابط سريعة",
@@ -142,7 +142,7 @@ export const appContentData = {
     builtWith: "مبني بـ Next.js و TypeScript"
   },
 
-  // Performance Monitor
+  
   performance: {
     title: "مقاييس الأداء",
     loadTime: "وقت التحميل",
@@ -152,7 +152,7 @@ export const appContentData = {
     views: "المشاهدات"
   },
 
-  // Floating Action Button
+  
   fab: {
     downloadCV: "تحميل السيرة الذاتية",
     contact: "اتصل بي",
@@ -160,7 +160,7 @@ export const appContentData = {
     backToTop: "العودة للأعلى"
   },
 
-  // Common
+  
   common: {
     loading: "جاري التحميل...",
     error: "حدث خطأ ما",
@@ -173,7 +173,7 @@ export const appContentData = {
     readLess: "اقرأ أقل"
   },
 
-  // 404 Not Found
+  
   notFound: {
     title: "الصفحة غير موجودة",
     description: "عذراً، لا يمكننا العثور على الصفحة التي تبحث عنها.",
@@ -181,13 +181,13 @@ export const appContentData = {
     homeText: "العودة إلى الصفحة الرئيسية"
   },
 
-  // Languages Section
+  
   languages: {
     title: "اللغات",
     subtitle: "اللغات التي أتحدث بها"
   },
 
-  // Resume Download Section
+  
   resumeDownload: {
     title: "تحميل السيرة الذاتية",
     description: "احصل على نسخة PDF من سيرتي الذاتية الكاملة",
@@ -195,7 +195,7 @@ export const appContentData = {
     lastUpdated: "آخر تحديث"
   },
 
-  // Education Section
+  
   education: {
     title: "التعليم والشهادات",
     subtitle: "الأساس الأكاديمي والتطوير المستمر",

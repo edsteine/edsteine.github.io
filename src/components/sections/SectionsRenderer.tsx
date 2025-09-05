@@ -1,5 +1,4 @@
-// Sections Renderer - Single Responsibility: Render sections based on configuration
-import React from 'react';
+
 import AnimatedSection from '@/components/features/common/AnimatedSection';
 import LazySection from '@/components/features/common/LazySection';
 import { PORTFOLIO_SECTIONS, SectionConfig } from '@/lib/config/sectionsConfig';

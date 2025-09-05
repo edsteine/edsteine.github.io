@@ -1,8 +1,8 @@
-// InterestCategory component - Following Single Responsibility Principle
+
 "use client";
 
 import React from 'react';
-// InterestsService functionality implemented inline
+
 
 interface InterestCategory {
   id: number;
@@ -21,7 +21,7 @@ const InterestCategoryComponent: React.FC<InterestCategoryProps> = ({
   category, 
   className = '' 
 }) => {
-  // Inline styling and logic
+  
   const containerClasses = `bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border-l-4 ${category.color}`;
   const titleClasses = "text-lg font-semibold mb-4 text-gray-900 dark:text-white flex items-center";
   

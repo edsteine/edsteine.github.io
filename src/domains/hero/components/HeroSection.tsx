@@ -1,25 +1,25 @@
 "use client";
 
-import React, { useMemo } from 'react';
-import { motion } from "framer-motion";
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
+import { motion } from "framer-motion";
+import React, { useMemo } from 'react';
 
 const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
 
-  // Generate deterministic particle positions to avoid hydration mismatch
+  
   const particles = useMemo(() => {
     return Array.from({ length: 20 }, (_, i) => {
-      // Use index to create deterministic but varied positions
-      const seed = i * 137.508; // Golden angle for good distribution
+      
+      const seed = i * 137.508; 
       return {
         left: ((seed % 100) + (i * 23) % 100) % 100,
         top: ((seed * 1.618) % 100 + (i * 17) % 100) % 100,
-        duration: 3 + ((i * 7) % 20) / 10, // 3.0 - 5.0 seconds
-        delay: (i * 11) % 40 / 20 // 0 - 2.0 seconds
+        duration: 3 + ((i * 7) % 20) / 10, 
+        delay: (i * 11) % 40 / 20 
       };
     });
   }, []);
@@ -31,7 +31,7 @@ const HeroSection: React.FC = () => {
       role="banner" 
       aria-label="Hero section introducing Adil Ajdaa"
     >
-      {/* Terminal-style background pattern */}
+      {}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-4 left-4 text-green-400 font-mono text-xs">
           <div>$ whoami</div>
@@ -45,7 +45,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Animated dots */}
+      {}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle, i) => (
           <motion.div
@@ -69,7 +69,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       <div className="relative z-10">
-        {/* Profile avatar placeholder */}
+        {}
         <div className="mb-8">
           <div className="mx-auto w-40 h-40 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full border-4 border-white/20 shadow-lg flex items-center justify-center">
             <div className="text-white text-4xl font-bold">AA</div>

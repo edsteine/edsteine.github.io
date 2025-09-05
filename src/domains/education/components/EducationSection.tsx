@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState } from 'react';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
-import { educationData } from '@/domains/education/data/education';
-import { certifications, professionalDevelopment } from '@/domains/education/data/education';
+import { certifications, educationData, professionalDevelopment } from '@/domains/education/data/education';
+import { useState } from 'react';
 
-// Simple icon components instead of emoji
+
 const LocationIcon = () => (
   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"/>
@@ -29,7 +28,7 @@ const EducationSection = () => {
   const [showAllCertifications, setShowAllCertifications] = useState(false);
   const [showAllProfessionalDev, setShowAllProfessionalDev] = useState(false);
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
 
   const visibleCertifications = showAllCertifications ? certifications : certifications.slice(0, 3);
@@ -37,7 +36,7 @@ const EducationSection = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      {/* Education */}
+      {}
       <div className="mb-12">
         <div className="grid gap-6">
           {educationData.map((edu) => (
@@ -93,7 +92,7 @@ const EducationSection = () => {
         </div>
       </div>
 
-      {/* Certifications */}
+      {}
       <div className="mb-12">
         <h4 className="text-2xl font-bold mb-4">Certifications</h4>
         <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 mb-6">
@@ -124,7 +123,7 @@ const EducationSection = () => {
         )}
       </div>
 
-      {/* Professional Development */}
+      {}
       <div>
         <h4 className="text-2xl font-bold mb-4">Professional Development & Continuous Learning</h4>
         <div className="mb-6">

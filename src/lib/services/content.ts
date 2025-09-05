@@ -1,4 +1,4 @@
-// Content service - Single Responsibility: Dynamic content loading
+
 export class ContentService {
   static async getContent<T = unknown>(contentType: string, language = 'en'): Promise<T | null> {
     try {
@@ -7,7 +7,7 @@ export class ContentService {
     } catch (error) {
       console.warn(`Content not found for ${contentType} in ${language}, trying fallback`);
       
-      // Fallback to English if language not found
+      
       try {
         const fallback = await import(`../../content/en/${contentType}.ts`);
         return fallback[`${contentType}Data`] || fallback.default || null;
@@ -37,7 +37,7 @@ export class ContentService {
   }
 
   static async preloadCriticalContent(): Promise<void> {
-    // Preload the most important content for better performance
+    
     const criticalContent = ['translations', 'appContent'];
     const languages = ['en', 'ar', 'fr'];
     

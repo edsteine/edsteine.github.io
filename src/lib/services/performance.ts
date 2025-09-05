@@ -53,7 +53,7 @@ class PerformanceService {
    */
   private setupPerformanceObserver(): void {
     try {
-      // Largest Contentful Paint (LCP)
+      
       if ('PerformanceObserver' in window) {
         const observer = new PerformanceObserver((list) => {
           const entries = list.getEntries();
@@ -66,7 +66,7 @@ class PerformanceService {
         observer.observe({ entryTypes: ['largest-contentful-paint'] });
       }
 
-      // First Input Delay (FID) and Cumulative Layout Shift (CLS)
+      
       this.setupWebVitalsPolyfill();
     } catch (error) {
       errorReportingService.captureException(error as Error, {
@@ -79,16 +79,16 @@ class PerformanceService {
    * Setup Web Vitals using the web-vitals library approach
    */
   private setupWebVitalsPolyfill(): void {
-    // First Contentful Paint
+    
     this.measureFCP();
     
-    // Time to First Byte
+    
     this.measureTTFB();
     
-    // Layout Shift tracking
+    
     this.measureCLS();
     
-    // First Input Delay
+    
     this.measureFID();
   }
 
@@ -164,19 +164,19 @@ class PerformanceService {
    * Track custom performance metrics
    */
   private trackCustomMetrics(): void {
-    // Track page load time
+    
     window.addEventListener('load', () => {
       const loadTime = performance.now();
       this.recordCustomMetric('page_load_time', loadTime);
     });
 
-    // Track DOM content loaded
+    
     document.addEventListener('DOMContentLoaded', () => {
       const domTime = performance.now();
       this.recordCustomMetric('dom_content_loaded', domTime);
     });
 
-    // Track resource loading
+    
     this.trackResourceMetrics();
   }
 
@@ -232,7 +232,7 @@ class PerformanceService {
     this.metrics.push(metric);
     this.reportMetric(metric);
 
-    // Keep only last 50 metrics to prevent memory bloat
+    
     if (this.metrics.length > 50) {
       this.metrics = this.metrics.slice(-50);
     }

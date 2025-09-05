@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  /* Font variables - will be set dynamically by language */
+  
   --font-sans: ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
   
-  /* Design system colors */
+  
   --scrollbar-track-light: #f1f1f1;
   --scrollbar-track-dark: #374151;
   --scrollbar-thumb-light: #c1c1c1;
@@ -13,19 +13,19 @@
   --scrollbar-thumb-hover-light: #a1a1a1;
   --scrollbar-thumb-hover-dark: #9ca3af;
   
-  /* Animation timing */
+  
   --blob-duration: 7s;
   --animation-delay-short: 2s;
   --animation-delay-long: 4s;
 }
 
-/* Language-specific font optimizations */
+
 :lang(ar) {
   font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
   text-rendering: optimizeLegibility;
 }
 
-/* RTL-specific adjustments */
+
 [dir="rtl"] {
   text-align: right;
 }
@@ -48,13 +48,13 @@ body {
   font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-/* Performance optimizations */
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar styling */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -84,7 +84,7 @@ body {
   background: var(--scrollbar-thumb-hover-dark);
 }
 
-/* Blob animation for 404 page */
+
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);

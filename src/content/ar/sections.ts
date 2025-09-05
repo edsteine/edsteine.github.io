@@ -1,4 +1,4 @@
-// Section-specific content and translations (Arabic)
+
 export const sections = {
   hero: {
     greeting: "مرحباً، أنا",

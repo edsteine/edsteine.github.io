@@ -1,4 +1,4 @@
-// Utility functions used across the application
+
 import { clsx, type ClassValue } from 'clsx';
 
 /**

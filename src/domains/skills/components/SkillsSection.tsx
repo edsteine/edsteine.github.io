@@ -1,17 +1,17 @@
 "use client";
 
-import React from 'react';
-import { motion, cubicBezier } from 'framer-motion';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import Terminal from "@/domains/skills/components/Terminal";
-import { 
-  technicalSkillsMap, 
-  technicalSkillsCategories, 
-  softSkills
+import {
+    softSkills,
+    technicalSkillsCategories,
+    technicalSkillsMap
 } from '@/domains/skills/data/skills';
-// Types are now inferred from the data structure
+import { cubicBezier, motion } from 'framer-motion';
+import React from 'react';
 
-// Local interfaces for transformed data
+
+
 interface SkillDisplay {
   name: string;
   level: number;
@@ -22,7 +22,7 @@ interface SkillCategoryDisplay {
   skills: SkillDisplay[];
 }
 
-// Configuration constants following Open/Closed Principle
+
 const SKILLS_CONFIG = {
   animation: {
     skillVariants: {
@@ -66,10 +66,10 @@ const SkillsSection: React.FC = () => {
   const { t } = useLanguage();
   const [showAllSkills, setShowAllSkills] = React.useState(false);
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
 
-  // Transform data to display format
+  
   const technicalSkillsData: SkillCategoryDisplay[] = technicalSkillsCategories.map((categoryObj) => ({
     category: categoryObj.name,
     skills: categoryObj.skills.map(skillName => ({
@@ -78,7 +78,7 @@ const SkillsSection: React.FC = () => {
     })),
   }));
   
-  // Show only configured number of categories by default
+  
   const visibleSkillsData = showAllSkills 
     ? technicalSkillsData 
     : technicalSkillsData.slice(0, SKILLS_CONFIG.display.initialVisibleCategories);
@@ -145,7 +145,7 @@ const SkillsSection: React.FC = () => {
                   </div>
                 ))}
                 
-                {/* Show More/Less Button for Technical Skills */}
+                {}
                 {technicalSkillsData.length > SKILLS_CONFIG.display.initialVisibleCategories && (
                   <div className="text-center mb-8">
                     <button

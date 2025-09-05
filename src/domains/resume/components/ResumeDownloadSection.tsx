@@ -1,12 +1,12 @@
 "use client";
 
-import React from 'react';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
+import React from 'react';
 
 const ResumeDownloadSection: React.FC = () => {
   const { t } = useLanguage();
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
 
   return (

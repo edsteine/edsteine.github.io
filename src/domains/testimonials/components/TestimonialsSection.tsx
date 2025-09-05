@@ -1,17 +1,17 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useLanguage } from '@/components/layout/providers/LanguageProvider';
-import { testimonialsData, testimonialStats } from '@/domains/testimonials/data/testimonials';
-import TestimonialCard from '@/domains/testimonials/components/TestimonialCard';
 import CarouselNavigation from '@/components/features/common/CarouselNavigation';
-import CarouselDots from '@/components/ui/display/CarouselDots';
+import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import AutoPlayToggle from '@/components/ui/controls/AutoPlayToggle';
+import CarouselDots from '@/components/ui/display/CarouselDots';
+import TestimonialCard from '@/domains/testimonials/components/TestimonialCard';
+import { testimonialsData, testimonialStats } from '@/domains/testimonials/data/testimonials';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 
-// Configuration constants following Open/Closed Principle
+
 const TESTIMONIALS_CONFIG = {
-  autoPlayInterval: 5000, // 5 seconds
+  autoPlayInterval: 5000, 
   animationDuration: 0.5,
   headerAnimation: {
     initial: { opacity: 0, y: -20 },
@@ -29,16 +29,16 @@ const TESTIMONIALS_CONFIG = {
 const TestimonialsSection: React.FC = () => {
   const { t, currentLanguage } = useLanguage();
   
-  // Helper to safely convert translation to string for React
+  
   const tr = (key: string): string => String(t(key));
   
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(false); // Default OFF for accessibility
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false); 
 
   const testimonials = testimonialsData[currentLanguage as keyof typeof testimonialsData] || testimonialsData.en;
   const stats = testimonialStats[currentLanguage as keyof typeof testimonialStats] || testimonialStats.en;
 
-  // Auto-play functionality following Single Responsibility
+  
   useEffect(() => {
     if (!isAutoPlaying || testimonials.length <= 1) return;
     
@@ -49,10 +49,10 @@ const TestimonialsSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [isAutoPlaying, testimonials.length]);
 
-  // Navigation handlers following DRY principle
+  
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    setIsAutoPlaying(false); // Pause autoplay on manual navigation
+    setIsAutoPlaying(false); 
   };
 
   const handlePrevious = () => {
@@ -81,7 +81,7 @@ const TestimonialsSection: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-16">
-      {/* Header */}
+      {}
       <motion.header 
         className="text-center mb-12"
         initial={TESTIMONIALS_CONFIG.headerAnimation.initial}
@@ -99,7 +99,7 @@ const TestimonialsSection: React.FC = () => {
         </p>
       </motion.header>
 
-      {/* Main Testimonial Carousel */}
+      {}
       <div className="relative">
         <AnimatePresence mode="wait">
           <motion.div
@@ -115,7 +115,7 @@ const TestimonialsSection: React.FC = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Navigation Arrows - Only show if more than 1 testimonial */}
+        {}
         {testimonials.length > 1 && (
           <CarouselNavigation
             onPrevious={handlePrevious}
@@ -126,7 +126,7 @@ const TestimonialsSection: React.FC = () => {
         )}
       </div>
 
-      {/* Carousel Controls - Only show if more than 1 testimonial */}
+      {}
       {testimonials.length > 1 && (
         <div className="flex flex-col items-center space-y-4">
           <CarouselDots
@@ -145,7 +145,7 @@ const TestimonialsSection: React.FC = () => {
         </div>
       )}
 
-      {/* Statistics Section */}
+      {}
       {stats && (
         <motion.section
           className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"

@@ -1,5 +1,5 @@
 import type { Testimonial } from '@/lib/types/content';
-// TestimonialStats type available for future use
+
 
 export const testimonialsData: Testimonial[] = [
   {

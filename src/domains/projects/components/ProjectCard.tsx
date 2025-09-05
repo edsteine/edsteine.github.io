@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import React from 'react';
 
 interface ProjectCardProps {
   title: string;
@@ -12,7 +12,7 @@ interface ProjectCardProps {
   image?: string;
 }
 
-// Tech color mapping as constants (no function calls in render)
+
 const TECH_COLORS: Record<string, string> = {
   react: 'bg-blue-500',
   next: 'bg-blue-500', 
@@ -69,10 +69,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         transition: { duration: 0.3 }
       }}
     >
-      {/* Corner accent */}
+      {}
       <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-blue-500/20 to-transparent rounded-bl-3xl" />
       
-      {/* Image */}
+      {}
       {image && (
         <div className="mb-4">
           <Image
@@ -87,18 +87,18 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       )}
       
       <div className="relative z-10 flex-1 flex flex-col">
-        {/* Title */}
+        {}
         <h4 className="text-xl font-bold mb-2 text-gray-900 dark:text-white flex items-center">
           <span className="w-2 h-2 bg-green-500 rounded-full mr-3 animate-pulse"></span>
           {title}
         </h4>
         
-        {/* Description */}
+        {}
         <p className="text-gray-700 dark:text-gray-300 mb-4 flex-grow text-sm leading-relaxed">
           {description}
         </p>
         
-        {/* Technologies */}
+        {}
         <div className="flex flex-wrap gap-2 mb-4">
           {technologies.map((tech, index) => (
             <span 
@@ -111,7 +111,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
         
-        {/* Footer */}
+        {}
         <div className="mt-auto pt-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex items-center justify-between">
             <p className="text-gray-500 dark:text-gray-400 text-xs font-mono">

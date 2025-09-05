@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 const BackToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Debounced scroll handler to improve performance
+  
   const toggleVisibility = useCallback(() => {
     if (window.scrollY > 300) {
       setIsVisible(true);
@@ -14,7 +14,7 @@ const BackToTopButton: React.FC = () => {
     }
   }, []);
 
-  // Set the top scroll
+  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,

@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState } from 'react';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
-// AboutService functionality implemented inline
+import React, { useState } from 'react';
+
 import SpecializationCard from '@/domains/about/components/SpecializationCard';
 
-// Configuration constants following Open/Closed Principle
+
 const ABOUT_CONFIG = {
   animation: {
     expandTransition: 'transition-all duration-500',
@@ -33,10 +33,10 @@ const AboutSection: React.FC = () => {
   const { t } = useLanguage();
   const [showFullAbout, setShowFullAbout] = useState(false);
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
   
-  // Get specialization cards data
+  
   const specializationCards = [
     {
       id: 1,
@@ -77,14 +77,14 @@ const AboutSection: React.FC = () => {
       </h3>
 
       <div className={SECTION_CLASSES.content}>
-        {/* Main description */}
+        {}
         <div className={SECTION_CLASSES.description}>
           <p className="leading-relaxed text-gray-800 dark:text-gray-200">
             {tr('about.description')}
           </p>
         </div>
 
-        {/* Specialization cards using data-driven approach */}
+        {}
         <div className={SECTION_CLASSES.specializationGrid}>
           {specializationCards.map((card) => (
             <SpecializationCard 
@@ -94,11 +94,11 @@ const AboutSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Expandable detailed content */}
+        {}
         <div className={`${SECTION_CLASSES.expandableContent} ${showFullAbout ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'}`}>
 
 
-          {/* Core Technical Excellence */}
+          {}
           <div className="mb-4">
             <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
               <svg className="w-5 h-5 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -119,7 +119,7 @@ const AboutSection: React.FC = () => {
             )) : null}
           </div>
 
-          {/* Professional Philosophy */}
+          {}
           <div className="mt-6 p-6 bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-pink-900/30 rounded-xl border border-indigo-200 dark:border-indigo-800">
             <div className="flex items-center mb-3">
               <svg className="w-6 h-6 text-indigo-600 mr-3" fill="currentColor" viewBox="0 0 20 20">

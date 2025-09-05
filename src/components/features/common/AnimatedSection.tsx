@@ -1,6 +1,6 @@
-// Animated Section - Single Responsibility: Handle section animations
-import React from 'react';
+
 import { motion, Variants } from "framer-motion";
+import React from 'react';
 
 const SECTION_VARIANTS: Variants = {
   hidden: { opacity: 0, y: 50 },

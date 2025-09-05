@@ -1,7 +1,7 @@
 import { TranslationKeys } from '@/lib/types/content';
 
 export const ar: TranslationKeys = {
-  // Navigation
+  
   navigation: {
     home: "الرئيسية",
     about: "نبذة عني",
@@ -13,7 +13,7 @@ export const ar: TranslationKeys = {
     contact: "اتصل بي"
   },
 
-  // Hero Section
+  
   hero: {
     greeting: "مرحباً، أنا",
     name: "عادل أجداع",
@@ -33,7 +33,7 @@ export const ar: TranslationKeys = {
     }
   },
 
-  // About Section
+  
   about: {
     title: "نبذة عني",
     subtitle: "const developer = {",
@@ -46,7 +46,7 @@ export const ar: TranslationKeys = {
     ]
   },
 
-  // Skills Section
+  
   skills: {
     title: "المهارات التقنية",
     subtitle: "const skills = [",
@@ -58,7 +58,7 @@ export const ar: TranslationKeys = {
     databases: "قواعد البيانات"
   },
 
-  // Experience Section
+  
   experience: {
     title: "الخبرة المهنية",
     subtitle: "رحلتي المهنية",
@@ -68,7 +68,7 @@ export const ar: TranslationKeys = {
     technologies: "التقنيات المستخدمة"
   },
 
-  // Projects Section
+  
   projects: {
     title: "المشاريع المميزة",
     subtitle: "بعض من أعمالي الحديثة",
@@ -84,7 +84,7 @@ export const ar: TranslationKeys = {
     viewProject: "عرض المشروع"
   },
 
-  // Education Section
+  
   education: {
     title: "التعليم والشهادات",
     subtitle: "الأساس الأكاديمي والتطوير المستمر",
@@ -94,7 +94,7 @@ export const ar: TranslationKeys = {
     achievements: "الإنجازات"
   },
 
-  // Testimonials Section
+  
   testimonials: {
     title: "آراء العملاء",
     subtitle: "ما يقوله الزملاء والعملاء عن العمل معي",
@@ -109,13 +109,13 @@ export const ar: TranslationKeys = {
     goToTestimonial: "الذهاب إلى الشهادة"
   },
 
-  // Languages Section
+  
   languages: {
     title: "اللغات",
     subtitle: "التواصل عبر الثقافات"
   },
 
-  // Resume Download Section
+  
   resumeDownload: {
     title: "تحميل السيرة الذاتية",
     description: "احصل على نظرة شاملة على خبرتي ومهاراتي",
@@ -123,7 +123,7 @@ export const ar: TranslationKeys = {
     lastUpdated: "آخر تحديث"
   },
 
-  // Contact Section
+  
   contact: {
     title: "تواصل معي",
     subtitle: "مستعد للعمل معاً؟",
@@ -150,7 +150,7 @@ export const ar: TranslationKeys = {
     }
   },
 
-  // Common
+  
   common: {
     readMore: "اقرأ المزيد",
     readLess: "اقرأ أقل",

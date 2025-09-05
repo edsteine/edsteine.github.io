@@ -1,6 +1,6 @@
-// SEO service - Single Responsibility: SEO metadata generation
-import { siteConfig } from '../config/siteConfig';
+
 import { MASTER_CONFIG } from '@/lib/config/masterConfig';
+import { siteConfig } from '../config/siteConfig';
 
 export interface SEOData {
   title: string;

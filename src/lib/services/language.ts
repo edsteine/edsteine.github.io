@@ -1,10 +1,10 @@
-// Language service - Now uses master config (Single Source of Truth)
+
 import { getLanguageConfig, MASTER_CONFIG } from '@/lib/config/masterConfig';
 
-// Re-export interfaces for type safety
+
 export type { LanguageInfo as LanguageConfig } from '@/lib/config/masterConfig';
 
-// All language configuration now comes from master config
+
 export const languageConfig = getLanguageConfig();
 
 export class LanguageStorageService {

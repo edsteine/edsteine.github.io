@@ -1,4 +1,4 @@
-// Common translations used across multiple components (Arabic)
+
 export const common = {
   navigation: {
     home: "الرئيسية",

@@ -1,4 +1,4 @@
-// Section-specific content and translations
+
 export const sections = {
   hero: {
     greeting: "Hello, I'm",

@@ -1,8 +1,8 @@
-// Reusable Error Page Component - Single Responsibility: Handle different error types
+
 "use client";
 
-import Link from 'next/link';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
+import Link from 'next/link';
 
 interface ErrorConfig {
   code: string;
@@ -103,7 +103,7 @@ export default function ErrorPage({
           )}
         </div>
 
-        {/* Animated background elements */}
+        {}
         <div className="absolute inset-0 overflow-hidden pointer-events-none" role="presentation" aria-hidden="true">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-100 dark:bg-blue-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
           <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-100 dark:bg-purple-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>

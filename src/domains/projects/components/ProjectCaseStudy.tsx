@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from 'react';
-import { useLanguage } from '@/components/layout/providers/LanguageProvider';
-import ProjectHeader from '@/domains/projects/components/ProjectHeader';
-import ProjectOverview from '@/domains/projects/components/ProjectOverview';
 import ExpandableSection from '@/components/features/common/ExpandableSection';
+import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import TechnologyBadge from '@/components/ui/display/TechnologyBadge';
 import ProjectActions from '@/domains/projects/components/ProjectActions';
+import ProjectHeader from '@/domains/projects/components/ProjectHeader';
+import ProjectOverview from '@/domains/projects/components/ProjectOverview';
+import React, { useState } from 'react';
 
-// Focused interfaces following Interface Segregation Principle
+
 interface ProjectBasic {
   id: string;
   title: string;
@@ -59,7 +59,7 @@ interface ProjectCaseStudyProps {
   project: Project;
 }
 
-// Configuration constants following Open/Closed Principle
+
 const SECTION_CONFIG = {
   challenge: { title: 'The Challenge', key: 'challenge' },
   solution: { title: 'Our Solution', key: 'solution' },
@@ -72,14 +72,14 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
   const { t } = useLanguage();
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   
-  // Helper function to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
   };
 
-  // If no case study, render compact version
+  
   if (!project.caseStudy) {
     return (
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
@@ -131,7 +131,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           timeline={project.timeline}
         />
 
-        {/* Challenge Section */}
+        {}
         <ExpandableSection
           title={SECTION_CONFIG.challenge.title}
           isExpanded={expandedSection === SECTION_CONFIG.challenge.key}
@@ -142,7 +142,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           </p>
         </ExpandableSection>
 
-        {/* Solution Section */}
+        {}
         <ExpandableSection
           title={SECTION_CONFIG.solution.title}
           isExpanded={expandedSection === SECTION_CONFIG.solution.key}
@@ -153,7 +153,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           </p>
         </ExpandableSection>
 
-        {/* Process Section */}
+        {}
         <ExpandableSection
           title={SECTION_CONFIG.process.title}
           isExpanded={expandedSection === SECTION_CONFIG.process.key}
@@ -173,7 +173,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           </div>
         </ExpandableSection>
 
-        {/* Results Section */}
+        {}
         <ExpandableSection
           title={SECTION_CONFIG.results.title}
           isExpanded={expandedSection === SECTION_CONFIG.results.key}
@@ -193,7 +193,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           </div>
         </ExpandableSection>
 
-        {/* Features Section */}
+        {}
         <ExpandableSection
           title={SECTION_CONFIG.features.title}
           isExpanded={expandedSection === SECTION_CONFIG.features.key}
@@ -211,7 +211,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           </div>
         </ExpandableSection>
 
-        {/* Technologies */}
+        {}
         <div className="mb-6">
           <h4 className="font-semibold text-gray-900 dark:text-white mb-3">
             {tr('projects.technologies')}
@@ -227,7 +227,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           </div>
         </div>
 
-        {/* Testimonial */}
+        {}
         {caseStudy.testimonial && (
           <div className="mb-6 bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-500">
             <blockquote className="text-gray-700 dark:text-gray-300 italic mb-4">
@@ -244,7 +244,7 @@ const ProjectCaseStudy: React.FC<ProjectCaseStudyProps> = ({ project }) => {
           </div>
         )}
 
-        {/* Action Buttons */}
+        {}
         <ProjectActions
           demoUrl={project.links.demo}
           githubUrl={project.links.github}

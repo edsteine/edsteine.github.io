@@ -1,10 +1,10 @@
-// Content-related types for projects, experience, education, testimonials, etc.
 
-// ===============================
-// PROJECT TYPES - Following Interface Segregation Principle
-// ===============================
 
-// Core project information
+
+
+
+
+
 export interface ProjectCore {
   id: number;
   title: string;
@@ -14,28 +14,28 @@ export interface ProjectCore {
   featured: boolean;
 }
 
-// Project content details
+
 export interface ProjectContent {
   longDescription: string;
   highlights: string[];
 }
 
-// Project links and external resources
+
 export interface ProjectLinks {
   demoUrl?: string;
   githubUrl?: string;
 }
 
-// Project technical information
+
 export interface ProjectTechnical {
   technologies: string[];
   metrics?: ProjectMetrics;
 }
 
-// Complete project interface - composed of focused interfaces
+
 export interface Project extends ProjectCore, ProjectContent, ProjectLinks, ProjectTechnical {}
 
-// Specific metrics with clear types
+
 export interface ProjectMetrics {
   users?: string;
   uptime?: string;
@@ -46,9 +46,9 @@ export interface ProjectMetrics {
   features?: string;
 }
 
-// ===============================
-// EXPERIENCE TYPES
-// ===============================
+
+
+
 
 export interface Experience {
   company: string;
@@ -59,9 +59,9 @@ export interface Experience {
   fullTechStack?: string[];
 }
 
-// ===============================
-// EDUCATION TYPES
-// ===============================
+
+
+
 
 export interface Education {
   institution: string;
@@ -90,9 +90,9 @@ export interface ProfessionalDevelopment {
   description: string;
 }
 
-// ===============================
-// SKILLS TYPES
-// ===============================
+
+
+
 
 export interface Skill {
   name: string;
@@ -117,9 +117,9 @@ export interface TechnicalSkillsMap {
   };
 }
 
-// ===============================
-// TESTIMONIAL TYPES
-// ===============================
+
+
+
 
 export interface Testimonial {
   id: number;
@@ -141,9 +141,9 @@ export interface TestimonialStats {
   description: string;
 }
 
-// ===============================
-// LANGUAGE TYPES
-// ===============================
+
+
+
 
 export interface LanguageConfig {
   default: string;
@@ -157,11 +157,11 @@ export interface MultilingualData {
   description: Record<string, string>;
 }
 
-// ===============================
-// TRANSLATION TYPES
-// ===============================
 
-// Navigation-specific translations
+
+
+
+
 export interface NavigationTranslations {
   home: string;
   about: string;
@@ -173,7 +173,7 @@ export interface NavigationTranslations {
   contact: string;
 }
 
-// Hero section translations
+
 export interface HeroTranslations {
   greeting: string;
   name: string;
@@ -193,7 +193,7 @@ export interface HeroTranslations {
   };
 }
 
-// About section translations
+
 export interface AboutTranslations {
   title: string;
   subtitle: string;
@@ -201,7 +201,7 @@ export interface AboutTranslations {
   highlights: string[];
 }
 
-// Projects section translations
+
 export interface ProjectsTranslations {
   title: string;
   subtitle: string;
@@ -217,7 +217,7 @@ export interface ProjectsTranslations {
   viewProject: string;
 }
 
-// Contact section translations
+
 export interface ContactTranslations {
   title: string;
   subtitle: string;
@@ -248,7 +248,7 @@ export interface ContactInfoTranslations {
   availability: string;
 }
 
-// Skills section translations
+
 export interface SkillsTranslations {
   title: string;
   subtitle: string;
@@ -260,7 +260,7 @@ export interface SkillsTranslations {
   databases: string;
 }
 
-// Experience section translations
+
 export interface ExperienceTranslations {
   title: string;
   subtitle: string;
@@ -270,7 +270,7 @@ export interface ExperienceTranslations {
   technologies: string;
 }
 
-// Education section translations
+
 export interface EducationTranslations {
   title: string;
   subtitle: string;
@@ -280,7 +280,7 @@ export interface EducationTranslations {
   achievements: string;
 }
 
-// Testimonials section translations
+
 export interface TestimonialsTranslations {
   title: string;
   subtitle: string;
@@ -290,7 +290,7 @@ export interface TestimonialsTranslations {
   date: string;
 }
 
-// Common UI translations
+
 export interface CommonTranslations {
   readMore: string;
   readLess: string;
@@ -307,13 +307,13 @@ export interface CommonTranslations {
   backToTop: string;
 }
 
-// Languages section translations
+
 export interface LanguagesTranslations {
   title: string;
   subtitle: string;
 }
 
-// Resume download section translations  
+
 export interface ResumeDownloadTranslations {
   title: string;
   description: string;
@@ -321,7 +321,7 @@ export interface ResumeDownloadTranslations {
   lastUpdated: string;
 }
 
-// Enhanced testimonials with navigation
+
 export interface EnhancedTestimonialsTranslations extends TestimonialsTranslations {
   prevTestimonial: string;
   nextTestimonial: string;
@@ -330,7 +330,7 @@ export interface EnhancedTestimonialsTranslations extends TestimonialsTranslatio
   goToTestimonial: string;
 }
 
-// Main translation interface - properly segregated
+
 export interface TranslationKeys {
   navigation: NavigationTranslations;
   hero: HeroTranslations;
@@ -346,11 +346,11 @@ export interface TranslationKeys {
   common: CommonTranslations;
 }
 
-// ===============================
-// APP CONTENT TYPES
-// ===============================
 
-// 404 page content
+
+
+
+
 export interface NotFoundContent {
   title: string;
   description: string;
@@ -358,7 +358,7 @@ export interface NotFoundContent {
   homeText: string;
 }
 
-// Error handling content
+
 export interface ErrorContent {
   title: string;
   description: string;
@@ -366,7 +366,7 @@ export interface ErrorContent {
   goHome: string;
 }
 
-// Loading states content
+
 export interface LoadingContent {
   default: string;
   projects: string;
@@ -375,7 +375,7 @@ export interface LoadingContent {
   testimonials: string;
 }
 
-// App content - properly segregated without 'any' types
+
 export interface AppContentData {
   notFound: NotFoundContent;
   error: ErrorContent;

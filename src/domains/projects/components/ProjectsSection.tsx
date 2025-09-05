@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useState } from 'react';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import ProjectCard from "@/domains/projects/components/ProjectCard";
 import { projectsData } from '@/domains/projects/data/projects';
 import type { Project } from '@/lib/types/content';
+import React, { useState } from 'react';
 
-// Configuration constants following Open/Closed Principle
+
 const PROJECTS_CONFIG = {
   display: {
     defaultLimit: 3,
@@ -31,10 +31,10 @@ const ProjectsSection: React.FC = () => {
   const { t } = useLanguage();
   const [showAll, setShowAll] = useState(false);
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
   
-  // Get visible projects
+  
   const visibleProjects = showAll 
     ? projectsData 
     : projectsData.slice(0, PROJECTS_CONFIG.display.defaultLimit);
@@ -65,7 +65,7 @@ const ProjectsSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Show More/Less Button */}
+      {}
       {projectsData.length > PROJECTS_CONFIG.display.showMoreThreshold && (
         <div className={SECTION_CLASSES.buttonContainer}>
           <button

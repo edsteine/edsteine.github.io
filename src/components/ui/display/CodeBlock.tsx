@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 
 interface CodeBlockProps {
   code: string;
@@ -51,13 +51,13 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
     setIsTyping(false);
   };
 
-  // Safe syntax highlighting using CSS classes instead of HTML injection
+  
   const getSyntaxTokens = React.useMemo(() => {
     return (text: string) => {
       if (!text) return [];
       
-      // Note: tokens variable temporarily unused but kept for future enhancement
-      // const tokens: { text: string; type: string }[] = [];
+      
+      
       const patterns = [
         { regex: /(const|let|var|function|class|import|export|from|return|if|else|for|while)\b/, type: 'keyword' },
         { regex: /(['"`])(.*?)\1/, type: 'string' },
@@ -67,7 +67,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         { regex: /\b(true|false|null|undefined)\b/, type: 'boolean' }
       ];
       
-      // Simple word-based tokenization
+      
       const words = text.split(/(\s+)/);
       
       return words.map(word => {
@@ -102,7 +102,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
       animate={animated ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
     >
-      {/* Header */}
+      {}
       <div className="flex items-center justify-between px-4 py-3 bg-gray-800 border-b border-gray-700">
         <div className="flex items-center space-x-3">
           <div className="flex space-x-2">
@@ -139,7 +139,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         </div>
       </div>
 
-      {/* Code Content */}
+      {}
       <div className="p-0 font-mono text-sm">
         {lines.map((line, index) => (
           <motion.div
@@ -177,7 +177,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
         )}
       </div>
 
-      {/* Footer */}
+      {}
       <div className="px-4 py-2 bg-gray-800 border-t border-gray-700 flex justify-between items-center text-xs text-gray-400">
         <span>Lines: {lines.length}</span>
         <span>Language: {language}</span>

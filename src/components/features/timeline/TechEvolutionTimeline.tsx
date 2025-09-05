@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
-// TechEvolutionData created inline based on experience data
+
 
 const TechEvolutionTimeline: React.FC = () => {
   const [selectedYear, setSelectedYear] = useState<number>(2025);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  // Create tech evolution data inline
+  
   const techEvolutionData = [
     {
       year: 2025,
@@ -98,12 +98,12 @@ const TechEvolutionTimeline: React.FC = () => {
     }
   ];
 
-  // Get unique categories
+  
   const categories = ['All', ...Array.from(new Set(
     techEvolutionData.flatMap(year => year.newSkills.map(skill => skill.category))
   ))];
 
-  // Filter skills based on selected category
+  
   const filteredData = techEvolutionData.map(yearData => ({
     ...yearData,
     newSkills: selectedCategory === 'All' 
@@ -115,7 +115,7 @@ const TechEvolutionTimeline: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto py-12">
-      {/* Header */}
+      {}
       <div className="text-center mb-8">
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Technology Evolution Timeline
@@ -125,7 +125,7 @@ const TechEvolutionTimeline: React.FC = () => {
         </p>
       </div>
 
-      {/* Category Filter */}
+      {}
       <div className="flex flex-wrap justify-center gap-2 mb-8">
         {categories.map((category) => (
           <button
@@ -142,16 +142,16 @@ const TechEvolutionTimeline: React.FC = () => {
         ))}
       </div>
 
-      {/* Timeline */}
+      {}
       <div className="relative">
-        {/* Timeline line */}
+        {}
         <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-purple-500"></div>
 
-        {/* Timeline items */}
+        {}
         <div className="space-y-8">
           {filteredData.map((yearData) => (
             <div key={yearData.year} className="relative flex items-start">
-              {/* Timeline dot */}
+              {}
               <div 
                 className={`relative z-10 w-12 h-12 rounded-full border-4 border-white dark:border-gray-900 flex items-center justify-center font-bold text-sm cursor-pointer transition-colors ${
                   selectedYear === yearData.year 
@@ -163,7 +163,7 @@ const TechEvolutionTimeline: React.FC = () => {
                 {yearData.year}
               </div>
 
-              {/* Content */}
+              {}
               <div className="ml-6 flex-1">
                 <div className={`bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg border-l-4 ${
                   selectedYear === yearData.year ? 'border-blue-500' : 'border-gray-300 dark:border-gray-600'
@@ -172,7 +172,7 @@ const TechEvolutionTimeline: React.FC = () => {
                     {yearData.milestone}
                   </h4>
                   
-                  {/* Skills */}
+                  {}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     {yearData.newSkills.map((skill, skillIndex) => (
                       <div key={skillIndex} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
@@ -195,7 +195,7 @@ const TechEvolutionTimeline: React.FC = () => {
                           {skill.description}
                         </p>
                         
-                        {/* Proficiency bar */}
+                        {}
                         <div className="mt-2">
                           <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
                             <span>Proficiency</span>
@@ -212,7 +212,7 @@ const TechEvolutionTimeline: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Achievements */}
+                  {}
                   <div>
                     <h5 className="font-semibold text-gray-900 dark:text-white mb-2">
                       Key Achievements
@@ -233,7 +233,7 @@ const TechEvolutionTimeline: React.FC = () => {
         </div>
       </div>
 
-      {/* Selected Year Details */}
+      {}
       {selectedYearData && (
         <div className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8">
           <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">

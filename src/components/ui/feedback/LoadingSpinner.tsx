@@ -1,7 +1,7 @@
 "use client";
 
-import React from 'react';
 import { motion } from 'framer-motion';
+import React from 'react';
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg';
@@ -90,7 +90,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
     );
   }
 
-  // Default spinner
+  
   return (
     <div className="flex items-center justify-center">
       <motion.div
@@ -107,17 +107,17 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   );
 };
 
-// Skeleton loading component for content placeholders
+
 export const SkeletonLoader: React.FC<{ 
   lines?: number; 
   height?: string; 
   className?: string 
 }> = ({ lines = 3, height = 'h-4', className = '' }) => {
-  // Generate deterministic widths to avoid hydration mismatch
+  
   const widths = React.useMemo(() => {
     return Array.from({ length: lines }, (_, i) => {
-      // Use index to create deterministic but varied widths
-      const base = 85 + ((i * 7) % 15); // Varies between 85-99%
+      
+      const base = 85 + ((i * 7) % 15); 
       return Math.min(100, base);
     });
   }, [lines]);
@@ -142,7 +142,7 @@ export const SkeletonLoader: React.FC<{
   );
 };
 
-// App loading component for full-screen loading
+
 export const AppLoading = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
@@ -155,7 +155,7 @@ export const AppLoading = () => {
   );
 };
 
-// Section loading skeleton
+
 export const SectionSkeleton = () => {
   return (
     <div className="max-w-6xl mx-auto p-8 pb-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">

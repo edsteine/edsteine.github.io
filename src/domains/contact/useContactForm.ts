@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useCallback } from 'react';
-import { 
-  validateForm, 
-  sanitizeFormData, 
-  CONTACT_FORM_RULES,
-  type FormErrors 
-} from './formValidation';
 import { type ContactFormData } from '@/lib/types/components';
+import { useCallback, useState } from 'react';
+import {
+    CONTACT_FORM_RULES,
+    sanitizeFormData,
+    validateForm,
+    type FormErrors
+} from './formValidation';
 
 export interface UseContactFormReturn {
   formData: ContactFormData;
@@ -43,7 +43,7 @@ export function useContactForm(): UseContactFormReturn {
     
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear error when user starts typing
+    
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -52,7 +52,7 @@ export function useContactForm(): UseContactFormReturn {
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Sanitize form data - convert to string format for validation
+    
     const formDataForValidation = {
       name: formData.name,
       email: formData.email,
@@ -62,7 +62,7 @@ export function useContactForm(): UseContactFormReturn {
     };
     const sanitizedData = sanitizeFormData(formDataForValidation) as unknown as ContactFormData;
     
-    // Validate form - cast to FormData type for validation function
+    
     const validationErrors = validateForm(sanitizedData as unknown as Record<string, string>, CONTACT_FORM_RULES);
     
     if (Object.keys(validationErrors).length > 0) {
@@ -74,7 +74,7 @@ export function useContactForm(): UseContactFormReturn {
     setErrors({});
 
     try {
-      // TODO: Replace with actual API call
+      
       await simulateApiCall(sanitizedData);
       
       setSubmitted(true);
@@ -114,7 +114,7 @@ export function useContactForm(): UseContactFormReturn {
 async function simulateApiCall(data: ContactFormData): Promise<void> {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      // Simulate random failure for testing
+      
       if (Math.random() < 0.1) {
         reject(new Error('Network error'));
       } else {

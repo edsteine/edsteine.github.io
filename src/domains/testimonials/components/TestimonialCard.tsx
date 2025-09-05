@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
 import StarRating from '@/components/ui/feedback/StarRating';
 import { type Testimonial } from '@/lib/types/content';
+import { motion } from 'framer-motion';
+import React from 'react';
 
 interface TestimonialCardProps {
   testimonial: Testimonial;
@@ -14,24 +14,24 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 mx-4">
-      {/* Quote Icon */}
+      {}
       <div className="flex justify-center mb-6">
         <div className="text-6xl text-blue-500/20" aria-hidden="true">
           &ldquo;
         </div>
       </div>
 
-      {/* Testimonial Content */}
+      {}
       <blockquote className="text-lg md:text-xl text-gray-700 dark:text-gray-300 text-center leading-relaxed mb-8 font-medium">
         &ldquo;{testimonial.content}&rdquo;
       </blockquote>
 
-      {/* Rating */}
+      {}
       <div className="flex justify-center mb-6">
         <StarRating rating={testimonial.rating} />
       </div>
 
-      {/* Author Info */}
+      {}
       <div className="flex items-center justify-center space-x-4">
         {testimonial.image && (
           <motion.img

@@ -25,5 +25,5 @@ export const projectsData: Project[] = [
       scale: "10 مليون+ سجل"
     }
   }
-  // المزيد من المشاريع...
+  
 ];

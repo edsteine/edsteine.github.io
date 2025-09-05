@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import { languageConfig } from '@/lib/services/language';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useState } from 'react';
 
 const LanguageSwitcher: React.FC = () => {
   const { currentLanguage, changeLanguage, supportedLanguages } = useLanguage();
@@ -63,7 +63,7 @@ const LanguageSwitcher: React.FC = () => {
         )}
       </AnimatePresence>
 
-      {/* Backdrop */}
+      {}
       {isOpen && (
         <div
           className="fixed inset-0 z-40"

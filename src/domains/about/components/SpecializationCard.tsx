@@ -1,8 +1,8 @@
-// SpecializationCard component - Following Single Responsibility Principle
+
 "use client";
 
 import React from 'react';
-// AboutService functionality implemented inline
+
 
 interface SpecializationCard {
   id: number;
@@ -22,7 +22,7 @@ const SpecializationCardComponent: React.FC<SpecializationCardProps> = ({
   card, 
   className = '' 
 }) => {
-  // Inline styling and logic
+  
   const containerClasses = `bg-gray-50 dark:bg-gray-700 rounded-lg p-4 border-l-4 ${card.color} hover:shadow-lg transition-shadow duration-300`;
   const titleClasses = "text-md font-semibold mb-2 text-gray-900 dark:text-white flex items-center";
   const descriptionClasses = "text-sm text-gray-600 dark:text-gray-400";

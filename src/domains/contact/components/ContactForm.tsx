@@ -1,18 +1,18 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
 import FormInput from '@/components/ui/forms/FormInput';
 import FormSelect from '@/components/ui/forms/FormSelect';
 import FormTextarea from '@/components/ui/forms/FormTextarea';
 import ContactFormSuccess from '@/domains/contact/components/ContactFormSuccess';
+import { motion } from 'framer-motion';
+import React from 'react';
 import { useContactForm } from '../useContactForm';
 
 interface ContactFormProps {
   className?: string;
 }
 
-// Project type options
+
 const PROJECT_TYPE_OPTIONS = [
   { value: 'consultation', label: 'Consultation' },
   { value: 'mobile', label: 'Mobile App Development' },
@@ -37,7 +37,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
     resetForm,
   } = useContactForm();
 
-  // Show success message if form was submitted successfully
+  
   if (submitted) {
     return <ContactFormSuccess onReset={resetForm} className={className} />;
   }
@@ -49,7 +49,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Header */}
+      {}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-6">
         <h3 className="text-2xl font-bold text-white mb-2">
           Let&apos;s Build Something Amazing Together
@@ -59,9 +59,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
         </p>
       </div>
 
-      {/* Form */}
+      {}
       <form onSubmit={handleSubmit} className="p-8 space-y-6" noValidate>
-        {/* Global form error */}
+        {}
         {errors.submit && (
           <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
             <p className="text-red-700 dark:text-red-300 text-sm" role="alert">
@@ -70,7 +70,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
           </div>
         )}
 
-        {/* Name & Email Row */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormInput
             id="name"
@@ -96,7 +96,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
           />
         </div>
 
-        {/* Subject & Project Type Row */}
+        {}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormInput
             id="subject"
@@ -121,7 +121,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
           />
         </div>
 
-        {/* Message */}
+        {}
         <FormTextarea
           id="message"
           name="message"
@@ -136,7 +136,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
           maxLength={2000}
         />
 
-        {/* Submit Button */}
+        {}
         <motion.button
           type="submit"
           disabled={isSubmitting}
@@ -179,7 +179,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ className = '' }) => {
           )}
         </motion.button>
 
-        {/* Form Footer */}
+        {}
         <div className="text-center">
           <p className="text-sm text-gray-500 dark:text-gray-400">
             I typically respond within 24 hours. 

@@ -1,13 +1,13 @@
 "use client";
 
-import React from 'react';
 import { useLanguage } from '@/components/layout/providers/LanguageProvider';
 import ContactForm from "@/domains/contact/components/ContactForm";
+import React from 'react';
 
 const ContactSection: React.FC = () => {
   const { t } = useLanguage();
   
-  // Helper to safely convert translation to string
+  
   const tr = (key: string): string => String(t(key));
 
   return (
@@ -28,7 +28,7 @@ const ContactSection: React.FC = () => {
       </div>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-8">
-        {/* Quick Contact Info */}
+        {}
         <div className="lg:col-span-1 space-y-4">
           <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Quick Contact</h4>
           
@@ -69,7 +69,7 @@ const ContactSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Response Time */}
+          {}
           <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
             <div className="flex items-center space-x-2 mb-2">
               <span className="w-2 h-2 bg-[#10b981] rounded-full animate-pulse"></span>
@@ -83,7 +83,7 @@ const ContactSection: React.FC = () => {
           </div>
         </div>
         
-        {/* Contact Form */}
+        {}
         <div className="lg:col-span-2">
           <ContactForm />
         </div>

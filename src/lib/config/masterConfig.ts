@@ -1,5 +1,5 @@
-// Master Configuration - Single Source of Truth
-// All other configs derive from this file to eliminate duplication
+
+
 
 export interface PersonalInfo {
   name: string;
@@ -27,12 +27,12 @@ export interface ImagePaths {
   profile: string;
 }
 
-// ===============================
-// MASTER DATA - SINGLE SOURCE OF TRUTH
-// ===============================
+
+
+
 
 export const MASTER_CONFIG = {
-  // Personal Information
+  
   personal: {
     name: "Adil Ajdaa",
     email: "contact@adilajdaa.com", 
@@ -42,29 +42,29 @@ export const MASTER_CONFIG = {
     currentYear: new Date().getFullYear()
   } as PersonalInfo,
 
-  // Social Links
+  
   social: {
     github: "https://github.com/adilajdaa",
     linkedin: "https://linkedin.com/in/adilajdaa"
   } as SocialLinks,
 
-  // Image Paths
+  
   images: {
     og: "/images/og-image.jpg",
     profile: "/images/profile.jpg"
   } as ImagePaths,
 
-  // Languages Configuration
+  
   languages: {
     en: { code: 'en', name: 'English', direction: 'ltr', isDefault: true },
     ar: { code: 'ar', name: 'العربية', direction: 'rtl' },
     fr: { code: 'fr', name: 'Français', direction: 'ltr' }
   } as Record<string, LanguageInfo>,
 
-  // Navigation Items (language agnostic)
+  
   navigation: ['home', 'about', 'experience', 'projects', 'skills', 'education', 'testimonials', 'contact'],
 
-  // Skills Categories (for schema generation)
+  
   skillsForSchema: [
     "Mobile Development", "Android", "Kotlin", "Flutter", 
     "React", "Spring Boot", "Full Stack Development",
@@ -72,11 +72,11 @@ export const MASTER_CONFIG = {
   ]
 };
 
-// ===============================
-// DERIVED CONFIGURATIONS
-// ===============================
 
-// Language Config (derived from master)
+
+
+
+
 export const getLanguageConfig = () => ({
   default: Object.values(MASTER_CONFIG.languages).find(lang => lang.isDefault)?.code || 'en',
   supported: Object.keys(MASTER_CONFIG.languages),
@@ -85,14 +85,14 @@ export const getLanguageConfig = () => ({
   )
 });
 
-// Site Config (derived from master)
+
 export const getSiteConfig = () => ({
   ...MASTER_CONFIG.personal,
   social: MASTER_CONFIG.social,
   images: MASTER_CONFIG.images
 });
 
-// Navigation Links (derived from master)
+
 export const getNavigationLinks = () => 
   MASTER_CONFIG.navigation.map(item => ({
     name: item,

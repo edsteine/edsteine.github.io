@@ -1,4 +1,4 @@
-// Common translations used across multiple components
+
 export const common = {
   navigation: {
     home: "Home",

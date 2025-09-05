@@ -1,11 +1,11 @@
 'use client';
 
-import { useReportWebVitals } from 'next/web-vitals';
 import { performanceService } from '@/lib/services/performance';
+import { useReportWebVitals } from 'next/web-vitals';
 
 export function WebVitals() {
   useReportWebVitals((metric) => {
-    // Report to performance service
+    
     performanceService.recordWebVital({
       name: metric.name as 'CLS' | 'FID' | 'FCP' | 'LCP' | 'TTFB',
       value: metric.value,
@@ -14,12 +14,12 @@ export function WebVitals() {
       id: metric.id,
     });
 
-    // Also log to console in development
+    
     if (process.env.NODE_ENV === 'development') {
       console.log('📊 Web Vital:', metric);
     }
 
-    // Report to Google Analytics if available
+    
     if (typeof window !== 'undefined' && 'gtag' in window) {
       const gtag = (window as Window & typeof globalThis & { gtag?: (...args: unknown[]) => void }).gtag;
       gtag?.('event', metric.name, {

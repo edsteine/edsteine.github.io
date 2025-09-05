@@ -1,7 +1,7 @@
 import { TranslationKeys } from '@/lib/types/content';
 
 export const fr: TranslationKeys = {
-  // Navigation
+  
   navigation: {
     home: "Accueil",
     about: "À propos",
@@ -13,7 +13,7 @@ export const fr: TranslationKeys = {
     contact: "Contact"
   },
 
-  // Hero Section
+  
   hero: {
     greeting: "Bonjour, je suis",
     name: "Adil Ajdaa",
@@ -33,7 +33,7 @@ export const fr: TranslationKeys = {
     }
   },
 
-  // About Section
+  
   about: {
     title: "À Propos de Moi",
     subtitle: "const developer = {",
@@ -46,7 +46,7 @@ export const fr: TranslationKeys = {
     ]
   },
 
-  // Skills Section
+  
   skills: {
     title: "Compétences Techniques",
     subtitle: "const skills = [",
@@ -58,7 +58,7 @@ export const fr: TranslationKeys = {
     databases: "Bases de Données"
   },
 
-  // Experience Section
+  
   experience: {
     title: "Expérience Professionnelle",
     subtitle: "Mon Parcours Professionnel",
@@ -68,7 +68,7 @@ export const fr: TranslationKeys = {
     technologies: "Technologies Utilisées"
   },
 
-  // Projects Section
+  
   projects: {
     title: "Projets Phares",
     subtitle: "Quelques-uns de mes travaux récents",
@@ -84,7 +84,7 @@ export const fr: TranslationKeys = {
     viewProject: "Voir Projet"
   },
 
-  // Testimonials Section
+  
   testimonials: {
     title: "Témoignages Clients",
     subtitle: "Ce que disent mes collègues et clients sur notre collaboration",
@@ -99,13 +99,13 @@ export const fr: TranslationKeys = {
     goToTestimonial: "Aller au témoignage"
   },
 
-  // Languages Section
+  
   languages: {
     title: "Langues",
     subtitle: "Communication interculturelle"
   },
 
-  // Resume Download Section
+  
   resumeDownload: {
     title: "Télécharger CV",
     description: "Obtenez un aperçu complet de mon expérience et de mes compétences",
@@ -113,7 +113,7 @@ export const fr: TranslationKeys = {
     lastUpdated: "Dernière mise à jour"
   },
 
-  // Contact Section
+  
   contact: {
     title: "Contactez-Moi",
     subtitle: "Prêt à travailler ensemble ?",
@@ -140,7 +140,7 @@ export const fr: TranslationKeys = {
     }
   },
 
-  // Education Section
+  
   education: {
     title: "Formation & Certifications",
     subtitle: "Base Académique & Apprentissage Continu",
@@ -150,7 +150,7 @@ export const fr: TranslationKeys = {
     achievements: "Réalisations"
   },
 
-  // Common
+  
   common: {
     readMore: "Lire Plus",
     readLess: "Lire Moins",
