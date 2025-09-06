@@ -60,14 +60,14 @@ const TYPE_STYLES: TypeStyleConfig = {
 
 const TIMELINE_CLASSES = {
   container: 'relative max-w-6xl mx-auto',
-  line: 'absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 via-indigo-500 to-green-500 shadow-lg',
-  eventsContainer: 'space-y-12 md:space-y-16',
+  line: 'absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-2 bg-gradient-to-b from-blue-400 via-purple-500 via-indigo-500 via-pink-500 to-green-400 shadow-2xl rounded-full',
+  eventsContainer: 'space-y-16 md:space-y-20',
   eventContainer: 'relative flex items-center group',
-  node: 'absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-6 h-6 rounded-full border-4 border-white dark:border-gray-900 z-10 shadow-xl transition-all duration-300 group-hover:scale-125 group-hover:shadow-2xl',
-  cardContainer: 'ml-20 md:ml-0 md:w-5/12 md:mx-12 cursor-pointer w-full max-w-lg transition-all duration-500 group-hover:scale-105',
-  card: 'bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border-2 transition-all duration-500 backdrop-blur-sm bg-white/90 dark:bg-gray-800/90 hover:shadow-2xl hover:bg-white dark:hover:bg-gray-800',
-  cardSelected: 'border-blue-500 shadow-2xl ring-4 ring-blue-200 dark:ring-blue-800 scale-105',
-  cardHover: 'border-transparent hover:border-blue-300 dark:hover:border-blue-600 hover:shadow-2xl',
+  node: 'absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full border-4 border-white dark:border-gray-900 z-20 shadow-2xl transition-all duration-500 group-hover:scale-150 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]',
+  cardContainer: 'ml-24 md:ml-0 md:w-5/12 md:mx-16 cursor-pointer w-full max-w-lg transition-all duration-500 group-hover:scale-110',
+  card: 'bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border-2 transition-all duration-500 backdrop-blur-sm bg-white/95 dark:bg-gray-800/95 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:bg-white dark:hover:bg-gray-800',
+  cardSelected: 'border-blue-500 shadow-[0_25px_60px_rgba(59,130,246,0.3)] ring-4 ring-blue-200 dark:ring-blue-800 scale-110',
+  cardHover: 'border-transparent hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)]',
   header: 'flex items-center space-x-3 mb-3',
   iconContainer: 'text-blue-600 dark:text-blue-400',
   titleContainer: 'flex-1 min-w-0',
@@ -155,15 +155,21 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
         <div className="absolute inset-0 bg-gradient-to-b from-blue-400/30 via-purple-400/30 via-indigo-400/30 to-green-400/30 animate-pulse" />
       </div>
 
-      {/* Floating Year Markers */}
-      <div className="absolute left-2 md:left-1/2 md:transform md:-translate-x-1/2 -top-6 text-xs text-gray-500 dark:text-gray-400 font-mono md:-ml-8">
-        <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-3 py-1 rounded-full shadow-lg text-center min-w-16">
-          2025
+      {/* Enhanced Year Markers */}
+      <div className="absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 -top-8 z-30 md:-ml-16">
+        <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white px-6 py-3 rounded-2xl shadow-2xl text-center font-bold text-lg border-4 border-white dark:border-gray-900 animate-pulse">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🚀</span>
+            <span>2025</span>
+          </div>
         </div>
       </div>
-      <div className="absolute left-2 md:left-1/2 md:transform md:-translate-x-1/2 -bottom-6 text-xs text-gray-500 dark:text-gray-400 font-mono md:-ml-8">
-        <div className="bg-gradient-to-r from-green-500 to-teal-500 text-white px-3 py-1 rounded-full shadow-lg text-center min-w-16">
-          2016
+      <div className="absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 -bottom-8 z-30 md:-ml-16">
+        <div className="bg-gradient-to-r from-green-500 via-teal-500 to-emerald-500 text-white px-6 py-3 rounded-2xl shadow-2xl text-center font-bold text-lg border-4 border-white dark:border-gray-900">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🌱</span>
+            <span>2016</span>
+          </div>
         </div>
       </div>
 

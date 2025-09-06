@@ -46,19 +46,19 @@ const SKILLS_CONFIG = {
 } as const;
 
 const SECTION_CLASSES = {
-  container: "max-w-6xl mx-auto p-8 pb-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700",
-  title: "text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white",
-  grid: "grid lg:grid-cols-3 gap-8",
+  container: "max-w-6xl mx-auto p-8 pb-20 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700",
+  title: "text-2xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white",
+  grid: "grid lg:grid-cols-3 gap-12",
   skillsColumn: "lg:col-span-2",
   terminalColumn: "lg:col-span-1",
-  skillCard: "mb-6",
-  skillGrid: "grid grid-cols-1 md:grid-cols-2 gap-4",
+  skillCard: "mb-8 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300",
+  skillGrid: "grid grid-cols-1 md:grid-cols-2 gap-6",
   skillItem: {
     header: "flex justify-between mb-2",
-    label: "text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium flex items-center",
-    percentage: "text-sm font-semibold text-blue-600 dark:text-blue-400 font-mono bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded",
-    barContainer: "relative w-full bg-gray-200 rounded-full h-3 dark:bg-gray-700 shadow-inner overflow-hidden",
-    bar: "h-3 rounded-full shadow-sm relative"
+    label: "text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium flex items-center transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400",
+    percentage: "text-sm font-semibold text-blue-600 dark:text-blue-400 font-mono bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-lg shadow-sm",
+    barContainer: "relative w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 shadow-inner overflow-hidden hover:shadow-md transition-all duration-300",
+    bar: "h-4 rounded-full shadow-lg relative transition-all duration-1000 hover:shadow-xl"
   }
 } as const;
 
@@ -96,15 +96,17 @@ const SkillsSection: React.FC = () => {
         <span className="text-green-500">() =&gt;</span> 
         <span className="text-gray-400">{' {'}</span>
         <br />
-        <span className="text-gray-400 ml-4">{'// Loading amazing skills...'}</span>
+        <span className="text-gray-400 ml-4">{'// 🚀 Showcasing professional expertise'}</span>
         <br />
         <span className="text-purple-500 ml-4">return</span>{' '}
         <span className="text-orange-500">skills</span>
         <span className="text-gray-400">.</span>
-        <span className="text-blue-400">filter</span>
+        <span className="text-blue-400">map</span>
         <span className="text-gray-400">{'('}</span>
-        <span className="text-red-400">s =&gt; s.level</span> 
-        <span className="text-gray-400">{' > 80)'}</span>
+        <span className="text-red-400">skill =&gt; skill</span>
+        <span className="text-gray-400">{')'}</span>
+        <br />
+        <span className="text-gray-400 ml-8">{'.sort((a, b) => b.level - a.level)'}</span>
         <br />
         <span className="text-gray-400">{'}'}</span>
       </h3>

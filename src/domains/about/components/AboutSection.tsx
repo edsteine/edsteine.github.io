@@ -128,11 +128,26 @@ const AboutSection: React.FC = () => {
               <h4 className="text-lg font-bold text-indigo-800 dark:text-indigo-200">Professional Philosophy</h4>
             </div>
             <p className="leading-relaxed text-gray-800 dark:text-gray-200 text-center">
-              <span className="font-mono text-purple-600 dark:text-purple-400">function</span> 
-              <span className="font-mono text-blue-600 dark:text-blue-400">buildGreatSoftware</span><span className="text-gray-600">()</span> 
-              <span className="text-gray-600">{' {'}</span><br/>
-              <span className="ml-4 text-gray-700 dark:text-gray-300">return engineering.expertise + business.acumen + team.growth;</span><br/>
-              <span className="text-gray-600">{'}'}</span>
+              <span className="font-mono text-blue-400">const</span>{' '}
+              <span className="font-mono text-yellow-500">buildGreatSoftware</span> 
+              <span className="text-gray-400">{' = '}</span>
+              <span className="text-green-500">() =&gt;</span> 
+              <span className="text-gray-400">{' {'}</span><br/>
+              <span className="ml-4 text-gray-400">{'// 🚀 Crafting excellence through code'}</span><br/>
+              <span className="ml-4 text-purple-500">return</span>{' '}
+              <span className="text-orange-500">engineering</span>
+              <span className="text-gray-400">.</span>
+              <span className="text-blue-400">expertise</span> 
+              <span className="text-gray-400">{' + '}</span>
+              <span className="text-orange-500">business</span>
+              <span className="text-gray-400">.</span>
+              <span className="text-blue-400">acumen</span><br/>
+              <span className="ml-8 text-gray-400">{' + '}</span>
+              <span className="text-orange-500">team</span>
+              <span className="text-gray-400">.</span>
+              <span className="text-blue-400">growth</span>
+              <span className="text-gray-400">;</span><br/>
+              <span className="text-gray-400">{'}'}</span>
             </p>
           </div>
         </div>
