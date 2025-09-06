@@ -20,9 +20,9 @@ const ABOUT_CONFIG = {
 } as const;
 
 const SECTION_CLASSES = {
-  container: "max-w-6xl mx-auto p-8 pb-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700",
-  title: "text-2xl md:text-3xl font-bold text-center mb-8 text-gray-900 dark:text-white",
-  content: "text-center max-w-4xl mx-auto text-sm md:text-base lg:text-lg text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900 p-6 md:p-8 rounded-lg shadow-md border border-gray-200 dark:border-gray-700",
+  container: "max-w-7xl mx-auto p-8 pb-24 pt-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700",
+  title: "text-3xl md:text-5xl font-bold text-center mb-12 text-gray-900 dark:text-white leading-tight",
+  content: "text-center max-w-5xl mx-auto text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 p-8 md:p-12 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700",
   description: "mb-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-lg border-l-4 border-blue-500",
   specializationGrid: "grid md:grid-cols-3 gap-4 mb-6",
   expandableContent: "overflow-hidden transition-all duration-500",

@@ -60,14 +60,14 @@ const TYPE_STYLES: TypeStyleConfig = {
 
 const TIMELINE_CLASSES = {
   container: 'relative max-w-6xl mx-auto',
-  line: 'absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-2 bg-gradient-to-b from-blue-400 via-purple-500 via-indigo-500 via-pink-500 to-green-400 shadow-2xl rounded-full',
-  eventsContainer: 'space-y-16 md:space-y-20',
-  eventContainer: 'relative flex items-center group',
-  node: 'absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full border-4 border-white dark:border-gray-900 z-20 shadow-2xl transition-all duration-500 group-hover:scale-150 group-hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]',
-  cardContainer: 'ml-24 md:ml-0 md:w-5/12 md:mx-16 cursor-pointer w-full max-w-lg transition-all duration-500 group-hover:scale-110',
-  card: 'bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-2xl border-2 transition-all duration-500 backdrop-blur-sm bg-white/95 dark:bg-gray-800/95 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] hover:bg-white dark:hover:bg-gray-800',
-  cardSelected: 'border-blue-500 shadow-[0_25px_60px_rgba(59,130,246,0.3)] ring-4 ring-blue-200 dark:ring-blue-800 scale-110',
-  cardHover: 'border-transparent hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)]',
+  line: 'absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-3 bg-gradient-to-b from-blue-400 via-purple-500 via-indigo-500 via-pink-500 to-green-400 shadow-[0_0_30px_rgba(139,92,246,0.3)] rounded-full animate-pulse',
+  eventsContainer: 'space-y-20 md:space-y-24',
+  eventContainer: 'relative flex items-center group hover:scale-105 transition-all duration-700',
+  node: 'absolute left-8 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 rounded-full border-4 border-white dark:border-gray-900 z-20 shadow-[0_0_25px_rgba(59,130,246,0.4)] transition-all duration-700 group-hover:scale-150 group-hover:shadow-[0_0_40px_rgba(59,130,246,0.8)] group-hover:animate-pulse',
+  cardContainer: 'ml-28 md:ml-0 md:w-5/12 md:mx-16 cursor-pointer w-full max-w-lg transition-all duration-700 group-hover:scale-115 group-hover:rotate-1',
+  card: 'bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 p-10 rounded-3xl shadow-[0_25px_50px_rgba(0,0,0,0.1)] border-2 transition-all duration-700 backdrop-blur-xl bg-white/98 dark:bg-gray-800/98 hover:shadow-[0_35px_70px_rgba(0,0,0,0.25)] hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 dark:hover:from-gray-750 dark:hover:to-gray-850',
+  cardSelected: 'border-blue-500 shadow-[0_40px_80px_rgba(59,130,246,0.4)] ring-4 ring-blue-200 dark:ring-blue-800 scale-115 rotate-1 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20',
+  cardHover: 'border-transparent hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-[0_35px_70px_rgba(0,0,0,0.25)]',
   header: 'flex items-center space-x-3 mb-3',
   iconContainer: 'text-blue-600 dark:text-blue-400',
   titleContainer: 'flex-1 min-w-0',
@@ -155,21 +155,31 @@ const InteractiveTimeline: React.FC<InteractiveTimelineProps> = ({ events }) => 
         <div className="absolute inset-0 bg-gradient-to-b from-blue-400/30 via-purple-400/30 via-indigo-400/30 to-green-400/30 animate-pulse" />
       </div>
 
-      {/* Enhanced Year Markers */}
-      <div className="absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 -top-8 z-30 md:-ml-16">
-        <div className="bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500 text-white px-6 py-3 rounded-2xl shadow-2xl text-center font-bold text-lg border-4 border-white dark:border-gray-900 animate-pulse">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🚀</span>
-            <span>2025</span>
+      {/* Ultra-Enhanced Year Markers */}
+      <div className="absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 -top-12 z-40 md:-ml-24">
+        <div className="relative bg-gradient-to-r from-blue-400 via-purple-500 via-pink-500 to-indigo-600 text-white px-8 py-4 rounded-3xl shadow-[0_20px_50px_rgba(99,102,241,0.4)] text-center font-bold text-xl border-6 border-white dark:border-gray-900 animate-pulse hover:scale-110 transition-all duration-500">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 rounded-3xl animate-pulse opacity-75"></div>
+          <div className="relative flex items-center gap-3">
+            <span className="text-3xl animate-bounce">🚀</span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-black">2025</span>
+              <span className="text-xs font-semibold opacity-90">PRESENT</span>
+            </div>
           </div>
+          <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-600 rounded-3xl blur opacity-30 animate-pulse"></div>
         </div>
       </div>
-      <div className="absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 -bottom-8 z-30 md:-ml-16">
-        <div className="bg-gradient-to-r from-green-500 via-teal-500 to-emerald-500 text-white px-6 py-3 rounded-2xl shadow-2xl text-center font-bold text-lg border-4 border-white dark:border-gray-900">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🌱</span>
-            <span>2016</span>
+      <div className="absolute left-0 md:left-1/2 md:transform md:-translate-x-1/2 -bottom-12 z-40 md:-ml-24">
+        <div className="relative bg-gradient-to-r from-emerald-400 via-teal-500 via-green-500 to-lime-600 text-white px-8 py-4 rounded-3xl shadow-[0_20px_50px_rgba(16,185,129,0.4)] text-center font-bold text-xl border-6 border-white dark:border-gray-900 hover:scale-110 transition-all duration-500">
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-500 to-green-600 rounded-3xl animate-pulse opacity-75"></div>
+          <div className="relative flex items-center gap-3">
+            <span className="text-3xl">🌱</span>
+            <div className="flex flex-col">
+              <span className="text-2xl font-black">2016</span>
+              <span className="text-xs font-semibold opacity-90">JOURNEY BEGINS</span>
+            </div>
           </div>
+          <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400 via-teal-500 to-green-600 rounded-3xl blur opacity-30"></div>
         </div>
       </div>
 

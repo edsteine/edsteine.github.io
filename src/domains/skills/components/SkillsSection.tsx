@@ -46,19 +46,19 @@ const SKILLS_CONFIG = {
 } as const;
 
 const SECTION_CLASSES = {
-  container: "max-w-6xl mx-auto p-8 pb-20 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700",
-  title: "text-2xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white",
-  grid: "grid lg:grid-cols-3 gap-12",
+  container: "max-w-7xl mx-auto p-8 pb-24 pt-16 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700",
+  title: "text-3xl md:text-5xl font-bold text-center mb-16 text-gray-900 dark:text-white leading-tight",
+  grid: "grid lg:grid-cols-3 gap-16",
   skillsColumn: "lg:col-span-2",
   terminalColumn: "lg:col-span-1",
-  skillCard: "mb-8 p-6 bg-gray-50 dark:bg-gray-800/50 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300",
-  skillGrid: "grid grid-cols-1 md:grid-cols-2 gap-6",
+  skillCard: "mb-10 p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800/70 dark:to-gray-800/50 rounded-2xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:scale-105 transition-all duration-500",
+  skillGrid: "grid grid-cols-1 md:grid-cols-2 gap-8",
   skillItem: {
-    header: "flex justify-between mb-2",
-    label: "text-sm md:text-base text-gray-700 dark:text-gray-300 font-medium flex items-center transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400",
-    percentage: "text-sm font-semibold text-blue-600 dark:text-blue-400 font-mono bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-lg shadow-sm",
-    barContainer: "relative w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700 shadow-inner overflow-hidden hover:shadow-md transition-all duration-300",
-    bar: "h-4 rounded-full shadow-lg relative transition-all duration-1000 hover:shadow-xl"
+    header: "flex justify-between mb-3",
+    label: "text-sm md:text-base text-gray-700 dark:text-gray-300 font-semibold flex items-center transition-all duration-300 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105",
+    percentage: "text-sm font-bold text-blue-600 dark:text-blue-400 font-mono bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 px-4 py-2 rounded-xl shadow-lg border border-blue-200 dark:border-blue-800",
+    barContainer: "relative w-full bg-gradient-to-r from-gray-200 to-gray-300 dark:from-gray-700 dark:to-gray-600 rounded-full h-5 shadow-inner overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-105",
+    bar: "h-5 rounded-full shadow-2xl relative transition-all duration-2000 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] animate-pulse"
   }
 } as const;
 
